@@ -367,8 +367,8 @@
                                     <action selector="creatingAccount:" destination="g5O-51-BqP" eventType="touchUpInside" id="I0r-35-wT6"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Looped Header.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oLY-kJ-xwL">
-                                <rect key="frame" x="33" y="147" width="254" height="62"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Looped Text.png" translatesAutoresizingMaskIntoConstraints="NO" id="thk-MO-eNb">
+                                <rect key="frame" x="38" y="123" width="245" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -593,7 +593,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Looped Header.jpeg" width="3052" height="662"/>
+        <image name="Looped Text.png" width="3139" height="1097"/>
         <image name="button-play.png" width="30" height="30"/>
         <image name="camera.png" width="30" height="30"/>
         <image name="home.png" width="30" height="30"/>
