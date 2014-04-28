@@ -13,6 +13,11 @@
 @implementation RecordViewController
 
 @synthesize LoopingLabel;
+@synthesize playSound;
+
+BOOL done = YES;
+UIButton *currentSender;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +26,44 @@
         // Custom initialization
     }
     return self;
+}
+- (IBAction)playSound:(UIButton *)sender {
+    
+    if(done == YES){
+        
+        [sender setImage:[UIImage imageNamed:@"button-playRed.png"]forState:UIControlStateNormal];
+        
+        currentSender = sender;
+        //currentSoundLabel = sender.titleLabel.text;
+        
+        //url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
+        
+        NSError *error;
+        
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlLooping error:&error];
+        
+        if (error)
+        {
+            NSLog(@"Error in audioPlayer: %@",
+                  [error localizedDescription]);
+        } else {
+            _audioPlayer.delegate = self;
+            [_audioPlayer prepareToPlay];
+        }
+        
+        [_audioPlayer play];
+        
+        done = NO;
+    }
+    
+}
+
+-(void)audioPlayerDidFinishPlaying:
+(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    [_audioPlayer stop];
+    [currentSender setImage:[UIImage imageNamed:@"button-play.png"]forState:UIControlStateNormal];
+    done = YES;
 }
 
 - (void)viewDidLoad

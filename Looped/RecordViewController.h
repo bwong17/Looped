@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface RecordViewController : UIViewController
+
+
+@interface RecordViewController : UIViewController <AVAudioPlayerDelegate>
+
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (weak, nonatomic) IBOutlet UILabel *LoopingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playSound;
 
 @end
