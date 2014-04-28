@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 620EFFF2190DCFD60003CBAB /* Looped Text.png */; };
 		625EAC7B1909ECFC00B37E3C /* iconbeast lite - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */; };
 		625EAC7C1909ECFC00B37E3C /* 3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4F1909ECFC00B37E3C /* 3d.png */; };
 		625EAC7D1909ECFC00B37E3C /* abacus.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB501909ECFC00B37E3C /* abacus.png */; };
@@ -367,6 +366,7 @@
 		E0919D1919078FD300D1D50D /* SoundsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919D1819078FD300D1D50D /* SoundsTableCell.m */; };
 		E0919D1B1907A74C00D1D50D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919D1A1907A74C00D1D50D /* AVFoundation.framework */; };
 		E0919F821909EAF100D1D50D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919F811909EAF100D1D50D /* Parse.framework */; };
+		E0CE8967190DD78600CE7319 /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CE8966190DD78600CE7319 /* Looped Text.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -380,7 +380,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		620EFFF2190DCFD60003CBAB /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Text.png"; path = "../../Desktop/Looped Graphics/Looped Text.png"; sourceTree = "<group>"; };
 		625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iconbeast lite - license.txt"; sourceTree = "<group>"; };
 		625EAB4F1909ECFC00B37E3C /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3d.png; sourceTree = "<group>"; };
 		625EAB501909ECFC00B37E3C /* abacus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abacus.png; sourceTree = "<group>"; };
@@ -752,6 +751,7 @@
 		E0919D1819078FD300D1D50D /* SoundsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundsTableCell.m; sourceTree = "<group>"; };
 		E0919D1A1907A74C00D1D50D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E0919F811909EAF100D1D50D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E0CE8966190DD78600CE7319 /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Text.png"; path = "../../Desktop/Looped Text.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1194,7 +1194,7 @@
 		E0919A5D1904B34700D1D50D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				620EFFF2190DCFD60003CBAB /* Looped Text.png */,
+				E0CE8966190DD78600CE7319 /* Looped Text.png */,
 				625EADA81909EE6400B37E3C /* Sounds */,
 				625EAB4C1909ECFC00B37E3C /* iconbeast-lite */,
 				E0919CFC1904FCED00D1D50D /* Variables.h */,
@@ -1434,6 +1434,7 @@
 				625EAD7E1909ECFD00B37E3C /* switch.png in Resources */,
 				625EACCF1909ECFD00B37E3C /* credit-card.png in Resources */,
 				625EAD411909ECFD00B37E3C /* plus-sign.png in Resources */,
+				E0CE8967190DD78600CE7319 /* Looped Text.png in Resources */,
 				625EACA31909ECFC00B37E3C /* box-3d.png in Resources */,
 				625EAD481909ECFD00B37E3C /* printer.png in Resources */,
 				625EAD791909ECFD00B37E3C /* storage.png in Resources */,
@@ -1466,7 +1467,6 @@
 				625EAC941909ECFC00B37E3C /* arrow-small-16.png in Resources */,
 				625EAD151909ECFD00B37E3C /* lorry-side.png in Resources */,
 				625EAD301909ECFD00B37E3C /* paint-roller.png in Resources */,
-				620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */,
 				625EAD5C1909ECFD00B37E3C /* screen-area.png in Resources */,
 				625EACCD1909ECFD00B37E3C /* contrast.png in Resources */,
 				625EACB91909ECFD00B37E3C /* car-battery.png in Resources */,

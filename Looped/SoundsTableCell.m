@@ -16,6 +16,9 @@ NSURL *url;
 
 @implementation SoundsTableCell
 
+@synthesize soundLabel;
+@synthesize playButton;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -29,7 +32,7 @@ NSURL *url;
     if(currentDone == YES){
         
         currentSender = sender;
-        currentSoundLabel = sender.titleLabel.text;
+        //currentSoundLabel = sender.titleLabel.text;
         
         url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
         
@@ -81,6 +84,7 @@ NSURL *url;
        // [_audioPlayer prepareToPlay];
     //}
     currentDone = YES;
+    //[self performSegueWithIdentifier:@"toStartRecordingView" sender:self];
 }
 
 @end
