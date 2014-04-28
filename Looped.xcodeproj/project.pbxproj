@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 620EFFF2190DCFD60003CBAB /* Looped Text.png */; };
-		620EFFF5190DD6AA0003CBAB /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */; };
 		625EAC7B1909ECFC00B37E3C /* iconbeast lite - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */; };
 		625EAC7C1909ECFC00B37E3C /* 3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4F1909ECFC00B37E3C /* 3d.png */; };
 		625EAC7D1909ECFC00B37E3C /* abacus.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB501909ECFC00B37E3C /* abacus.png */; };
@@ -336,7 +334,9 @@
 		625EADDA1909EE6400B37E3C /* veil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC01909EE6400B37E3C /* veil.mp3 */; };
 		625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC11909EE6400B37E3C /* wipe.mp3 */; };
 		625EADDC1909EE6400B37E3C /* zig-zag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC21909EE6400B37E3C /* zig-zag.mp3 */; };
-		62BC0AC5190DE2C200896DBE /* Looped Base Color.png in Resources */ = {isa = PBXBuildFile; fileRef = 62BC0AC4190DE2C200896DBE /* Looped Base Color.png */; };
+		E06204F8190DE7B900FD633B /* Looped Base Color.png in Resources */ = {isa = PBXBuildFile; fileRef = E06204F5190DE7B900FD633B /* Looped Base Color.png */; };
+		E06204F9190DE7B900FD633B /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = E06204F6190DE7B900FD633B /* Looped Login Image.png */; };
+		E06204FA190DE7B900FD633B /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = E06204F7190DE7B900FD633B /* Looped Text.png */; };
 		E0919A571904B34700D1D50D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A561904B34700D1D50D /* Foundation.framework */; };
 		E0919A591904B34700D1D50D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A581904B34700D1D50D /* CoreGraphics.framework */; };
 		E0919A5B1904B34700D1D50D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A5A1904B34700D1D50D /* UIKit.framework */; };
@@ -382,8 +382,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		620EFFF2190DCFD60003CBAB /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Text.png"; path = "../../Desktop/Looped Graphics/Looped Text.png"; sourceTree = "<group>"; };
-		620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Login Image.png"; path = "../../Desktop/Looped Login Image.png"; sourceTree = "<group>"; };
 		625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iconbeast lite - license.txt"; sourceTree = "<group>"; };
 		625EAB4F1909ECFC00B37E3C /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3d.png; sourceTree = "<group>"; };
 		625EAB501909ECFC00B37E3C /* abacus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abacus.png; sourceTree = "<group>"; };
@@ -711,7 +709,9 @@
 		625EADC01909EE6400B37E3C /* veil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = veil.mp3; sourceTree = "<group>"; };
 		625EADC11909EE6400B37E3C /* wipe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wipe.mp3; sourceTree = "<group>"; };
 		625EADC21909EE6400B37E3C /* zig-zag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zig-zag.mp3"; sourceTree = "<group>"; };
-		62BC0AC4190DE2C200896DBE /* Looped Base Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Base Color.png"; path = "../../Desktop/Looped Base Color.png"; sourceTree = "<group>"; };
+		E06204F5190DE7B900FD633B /* Looped Base Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Base Color.png"; path = "../../Desktop/Looped/Looped Base Color.png"; sourceTree = "<group>"; };
+		E06204F6190DE7B900FD633B /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Login Image.png"; path = "../../Desktop/Looped/Looped Login Image.png"; sourceTree = "<group>"; };
+		E06204F7190DE7B900FD633B /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Text.png"; path = "../../Desktop/Looped/Looped Text.png"; sourceTree = "<group>"; };
 		E0919A531904B34600D1D50D /* Looped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0919A561904B34700D1D50D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0919A581904B34700D1D50D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1198,9 +1198,9 @@
 		E0919A5D1904B34700D1D50D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				62BC0AC4190DE2C200896DBE /* Looped Base Color.png */,
-				620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */,
-				620EFFF2190DCFD60003CBAB /* Looped Text.png */,
+				E06204F5190DE7B900FD633B /* Looped Base Color.png */,
+				E06204F6190DE7B900FD633B /* Looped Login Image.png */,
+				E06204F7190DE7B900FD633B /* Looped Text.png */,
 				625EADA81909EE6400B37E3C /* Sounds */,
 				625EAB4C1909ECFC00B37E3C /* iconbeast-lite */,
 				E0919CFC1904FCED00D1D50D /* Variables.h */,
@@ -1319,7 +1319,7 @@
 				ORGANIZATIONNAME = "Barbara Wong";
 				TargetAttributes = {
 					E0919A521904B34600D1D50D = {
-						DevelopmentTeam = C5D5LEK9E8;
+						DevelopmentTeam = E6U5UKEFL5;
 					};
 					E0919A791904B34A00D1D50D = {
 						TestTargetID = E0919A521904B34600D1D50D;
@@ -1472,9 +1472,9 @@
 				625EAC941909ECFC00B37E3C /* arrow-small-16.png in Resources */,
 				625EAD151909ECFD00B37E3C /* lorry-side.png in Resources */,
 				625EAD301909ECFD00B37E3C /* paint-roller.png in Resources */,
-				620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */,
 				625EAD5C1909ECFD00B37E3C /* screen-area.png in Resources */,
 				625EACCD1909ECFD00B37E3C /* contrast.png in Resources */,
+				E06204F8190DE7B900FD633B /* Looped Base Color.png in Resources */,
 				625EACB91909ECFD00B37E3C /* car-battery.png in Resources */,
 				625EAC9D1909ECFC00B37E3C /* battery-full.png in Resources */,
 				625EAC971909ECFC00B37E3C /* awareness-ribbon.png in Resources */,
@@ -1521,7 +1521,6 @@
 				625EADCA1909EE6400B37E3C /* flash-3.mp3 in Resources */,
 				625EAC7D1909ECFC00B37E3C /* abacus.png in Resources */,
 				625EAD4B1909ECFD00B37E3C /* pyramid.png in Resources */,
-				620EFFF5190DD6AA0003CBAB /* Looped Login Image.png in Resources */,
 				625EAD841909ECFD00B37E3C /* tennis.png in Resources */,
 				625EACC11909ECFD00B37E3C /* chess-castle.png in Resources */,
 				625EAD6F1909ECFD00B37E3C /* sofa.png in Resources */,
@@ -1555,6 +1554,7 @@
 				625EAD941909ECFD00B37E3C /* twitter.png in Resources */,
 				625EACE41909ECFD00B37E3C /* embed.png in Resources */,
 				625EACF21909ECFD00B37E3C /* folder.png in Resources */,
+				E06204FA190DE7B900FD633B /* Looped Text.png in Resources */,
 				625EAD971909ECFD00B37E3C /* wallet.png in Resources */,
 				625EADD01909EE6400B37E3C /* piston-3.mp3 in Resources */,
 				625EAD1E1909ECFD00B37E3C /* microphone-handheld.png in Resources */,
@@ -1565,6 +1565,7 @@
 				625EADD71909EE6400B37E3C /* suspension.mp3 in Resources */,
 				625EAD191909ECFD00B37E3C /* man.png in Resources */,
 				625EAD131909ECFD00B37E3C /* link.png in Resources */,
+				E06204F9190DE7B900FD633B /* Looped Login Image.png in Resources */,
 				625EACF01909ECFD00B37E3C /* flower-pot.png in Resources */,
 				625EACA61909ECFC00B37E3C /* briefcase.png in Resources */,
 				625EAD001909ECFD00B37E3C /* handcuff.png in Resources */,
@@ -1617,7 +1618,6 @@
 				625EAD571909ECFD00B37E3C /* ruler.png in Resources */,
 				625EAD7F1909ECFD00B37E3C /* sword.png in Resources */,
 				625EAC8C1909ECFC00B37E3C /* arrow-big-12.png in Resources */,
-				62BC0AC5190DE2C200896DBE /* Looped Base Color.png in Resources */,
 				625EAD5F1909ECFD00B37E3C /* search.png in Resources */,
 				625EAD891909ECFD00B37E3C /* thermometer.png in Resources */,
 				625EADCC1909EE6400B37E3C /* moon.mp3 in Resources */,
@@ -1845,8 +1845,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/barbarawong/Downloads,
@@ -1866,8 +1866,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/barbarawong/Downloads,

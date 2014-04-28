@@ -15,6 +15,7 @@
 @implementation LoginViewController
 @synthesize userName;
 @synthesize password;
+@synthesize topBar;
 
 - (void)viewDidLoad
 {
@@ -42,7 +43,9 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textfield
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 100, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 150, self.view.frame.size.width, self.view.frame.size.height);
+    
+    self.topBar.frame = CGRectMake(self.topBar.frame.origin.x,self.topBar.frame.origin.y + 150,self.topBar.frame.size.width, self.topBar.frame.size.height);
 }
 - (IBAction)creatingAccount:(id)sender {
     [self performSegueWithIdentifier:@"creatingAccount" sender:self];
@@ -50,7 +53,9 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textfield
 {
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 100, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + 150, self.view.frame.size.width, self.view.frame.size.height);
+    
+    self.topBar.frame = CGRectMake(self.topBar.frame.origin.x,self.topBar.frame.origin.y - 150,self.topBar.frame.size.width, self.topBar.frame.size.height);
 }
 
 -(IBAction)LogIn:(id)sender

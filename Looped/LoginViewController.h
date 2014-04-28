@@ -13,5 +13,6 @@
 @interface LoginViewController : UIViewController <UITextFieldDelegate,AVAudioPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UIView *topBar;
 @property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
 @end
