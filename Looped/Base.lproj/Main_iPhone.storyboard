@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g5O-51-BqP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g5O-51-BqP">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -113,7 +113,7 @@
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEi-T1-KCn">
-                                                    <rect key="frame" x="20" y="3" width="183" height="30"/>
+                                                    <rect key="frame" x="20" y="3" width="159" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="play">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -125,7 +125,7 @@
                                         <color key="backgroundColor" red="0.1621087158" green="0.86286272320000001" blue="0.40863252529999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="playButton" destination="j9i-28-JJz" id="ZRm-uM-6Ka"/>
-                                            <outlet property="soundLabel" destination="jEi-T1-KCn" id="8re-tG-xP8"/>
+                                            <outlet property="soundLabel" destination="jEi-T1-KCn" id="AZV-Yo-s7b"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -359,13 +359,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.058823529411764705" green="0.65098039215686276" blue="0.58823529411764708" alpha="1" colorSpace="deviceRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="vfb-qn-B1A" appends="YES" id="wGL-g2-Hek"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Q4L-Fl-fZO"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="createAccountButton" destination="9iQ-Se-zgj" id="HqL-qi-JAA"/>
                         <outlet property="password" destination="skY-oa-nRw" id="CEN-ev-GnS"/>
@@ -569,10 +569,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="sY3-e0-sZw"/>
-<<<<<<< HEAD
-        <segue reference="h0Q-yh-hmC"/>
-=======
-        <segue reference="SNd-Z5-mVx"/>
->>>>>>> FETCH_HEAD
+        <segue reference="LEe-4m-n2g"/>
     </inferredMetricsTieBreakers>
 </document>

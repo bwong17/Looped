@@ -53,6 +53,7 @@
     return UIInterfaceOrientationPortrait;
 }
 
+
 -(void)textFieldDidBeginEditing:(UITextField *)textfield
 {
     self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - 150, self.view.frame.size.width, self.view.frame.size.height);
