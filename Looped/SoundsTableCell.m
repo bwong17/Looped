@@ -32,7 +32,7 @@ NSURL *url;
     if(currentDone == YES){
         
         currentSender = sender;
-        //currentSoundLabel = sender.titleLabel.text;
+        currentSoundLabel = sender.titleLabel.text;
         
         url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
         

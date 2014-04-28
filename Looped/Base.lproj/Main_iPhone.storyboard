@@ -125,6 +125,7 @@
                                         <color key="backgroundColor" red="0.1621087158" green="0.86286272320000001" blue="0.40863252529999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="playButton" destination="j9i-28-JJz" id="ZRm-uM-6Ka"/>
+                                            <outlet property="soundLabel" destination="jEi-T1-KCn" id="8re-tG-xP8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
