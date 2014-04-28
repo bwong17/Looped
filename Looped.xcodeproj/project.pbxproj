@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 620EFFF2190DCFD60003CBAB /* Looped Text.png */; };
 		625EAC7B1909ECFC00B37E3C /* iconbeast lite - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */; };
 		625EAC7C1909ECFC00B37E3C /* 3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4F1909ECFC00B37E3C /* 3d.png */; };
 		625EAC7D1909ECFC00B37E3C /* abacus.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB501909ECFC00B37E3C /* abacus.png */; };
@@ -334,7 +335,6 @@
 		625EADDA1909EE6400B37E3C /* veil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC01909EE6400B37E3C /* veil.mp3 */; };
 		625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC11909EE6400B37E3C /* wipe.mp3 */; };
 		625EADDC1909EE6400B37E3C /* zig-zag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC21909EE6400B37E3C /* zig-zag.mp3 */; };
-		625EADDE190A153500B37E3C /* Looped Header.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 625EADDD190A153500B37E3C /* Looped Header.jpeg */; };
 		E0919A571904B34700D1D50D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A561904B34700D1D50D /* Foundation.framework */; };
 		E0919A591904B34700D1D50D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A581904B34700D1D50D /* CoreGraphics.framework */; };
 		E0919A5B1904B34700D1D50D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A5A1904B34700D1D50D /* UIKit.framework */; };
@@ -380,6 +380,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		620EFFF2190DCFD60003CBAB /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Text.png"; path = "../../Desktop/Looped Graphics/Looped Text.png"; sourceTree = "<group>"; };
 		625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iconbeast lite - license.txt"; sourceTree = "<group>"; };
 		625EAB4F1909ECFC00B37E3C /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3d.png; sourceTree = "<group>"; };
 		625EAB501909ECFC00B37E3C /* abacus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abacus.png; sourceTree = "<group>"; };
@@ -707,7 +708,6 @@
 		625EADC01909EE6400B37E3C /* veil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = veil.mp3; sourceTree = "<group>"; };
 		625EADC11909EE6400B37E3C /* wipe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wipe.mp3; sourceTree = "<group>"; };
 		625EADC21909EE6400B37E3C /* zig-zag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zig-zag.mp3"; sourceTree = "<group>"; };
-		625EADDD190A153500B37E3C /* Looped Header.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Looped Header.jpeg"; path = "../../Desktop/Looped Header.jpeg"; sourceTree = "<group>"; };
 		E0919A531904B34600D1D50D /* Looped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0919A561904B34700D1D50D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0919A581904B34700D1D50D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1194,10 +1194,10 @@
 		E0919A5D1904B34700D1D50D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				620EFFF2190DCFD60003CBAB /* Looped Text.png */,
 				625EADA81909EE6400B37E3C /* Sounds */,
 				625EAB4C1909ECFC00B37E3C /* iconbeast-lite */,
 				E0919CFC1904FCED00D1D50D /* Variables.h */,
-				625EADDD190A153500B37E3C /* Looped Header.jpeg */,
 				E0919A5E1904B34700D1D50D /* Looped-Info.plist */,
 				E0919A5F1904B34700D1D50D /* InfoPlist.strings */,
 				E0919A621904B34700D1D50D /* main.m */,
@@ -1466,6 +1466,7 @@
 				625EAC941909ECFC00B37E3C /* arrow-small-16.png in Resources */,
 				625EAD151909ECFD00B37E3C /* lorry-side.png in Resources */,
 				625EAD301909ECFD00B37E3C /* paint-roller.png in Resources */,
+				620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */,
 				625EAD5C1909ECFD00B37E3C /* screen-area.png in Resources */,
 				625EACCD1909ECFD00B37E3C /* contrast.png in Resources */,
 				625EACB91909ECFD00B37E3C /* car-battery.png in Resources */,
@@ -1613,7 +1614,6 @@
 				625EAD891909ECFD00B37E3C /* thermometer.png in Resources */,
 				625EADCC1909EE6400B37E3C /* moon.mp3 in Resources */,
 				625EAD9E1909ECFD00B37E3C /* whistle.png in Resources */,
-				625EADDE190A153500B37E3C /* Looped Header.jpeg in Resources */,
 				625EAD581909ECFD00B37E3C /* safe-bank.png in Resources */,
 				625EAD021909ECFD00B37E3C /* hd.png in Resources */,
 				625EACEF1909ECFD00B37E3C /* flag.png in Resources */,
