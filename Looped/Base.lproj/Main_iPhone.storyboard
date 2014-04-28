@@ -112,8 +112,8 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEi-T1-KCn">
-                                                    <rect key="frame" x="20" y="3" width="56" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEi-T1-KCn">
+                                                    <rect key="frame" x="20" y="3" width="183" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="play">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -359,13 +359,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.058823529411764705" green="0.65098039215686276" blue="0.58823529411764708" alpha="1" colorSpace="deviceRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="vfb-qn-B1A" appends="YES" id="wGL-g2-Hek"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Q4L-Fl-fZO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="createAccountButton" destination="9iQ-Se-zgj" id="HqL-qi-JAA"/>
                         <outlet property="password" destination="skY-oa-nRw" id="CEN-ev-GnS"/>
@@ -568,7 +568,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LEe-4m-n2g"/>
         <segue reference="sY3-e0-sZw"/>
+        <segue reference="h0Q-yh-hmC"/>
     </inferredMetricsTieBreakers>
 </document>
