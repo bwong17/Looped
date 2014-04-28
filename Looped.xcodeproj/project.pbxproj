@@ -10,8 +10,11 @@
 <<<<<<< HEAD
 =======
 		620EFFF3190DCFD60003CBAB /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = 620EFFF2190DCFD60003CBAB /* Looped Text.png */; };
+<<<<<<< HEAD
 		620EFFF5190DD6AA0003CBAB /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */; };
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> parent of f74d9b2... added more UI improvements
 		625EAC7B1909ECFC00B37E3C /* iconbeast lite - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */; };
 		625EAC7C1909ECFC00B37E3C /* 3d.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB4F1909ECFC00B37E3C /* 3d.png */; };
 		625EAC7D1909ECFC00B37E3C /* abacus.png in Resources */ = {isa = PBXBuildFile; fileRef = 625EAB501909ECFC00B37E3C /* abacus.png */; };
@@ -388,8 +391,11 @@
 <<<<<<< HEAD
 =======
 		620EFFF2190DCFD60003CBAB /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Text.png"; path = "../../Desktop/Looped Graphics/Looped Text.png"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Login Image.png"; path = "../../Desktop/Looped Login Image.png"; sourceTree = "<group>"; };
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> parent of f74d9b2... added more UI improvements
 		625EAB4D1909ECFC00B37E3C /* iconbeast lite - license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iconbeast lite - license.txt"; sourceTree = "<group>"; };
 		625EAB4F1909ECFC00B37E3C /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3d.png; sourceTree = "<group>"; };
 		625EAB501909ECFC00B37E3C /* abacus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abacus.png; sourceTree = "<group>"; };
@@ -1205,9 +1211,12 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				E0CE8966190DD78600CE7319 /* Looped Text.png */,
 =======
 				620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */,
+=======
+>>>>>>> parent of f74d9b2... added more UI improvements
 				620EFFF2190DCFD60003CBAB /* Looped Text.png */,
 >>>>>>> FETCH_HEAD
 				625EADA81909EE6400B37E3C /* Sounds */,
@@ -1328,7 +1337,7 @@
 				ORGANIZATIONNAME = "Barbara Wong";
 				TargetAttributes = {
 					E0919A521904B34600D1D50D = {
-						DevelopmentTeam = C5D5LEK9E8;
+						DevelopmentTeam = E6U5UKEFL5;
 					};
 					E0919A791904B34A00D1D50D = {
 						TestTargetID = E0919A521904B34600D1D50D;
@@ -1530,7 +1539,6 @@
 				625EADCA1909EE6400B37E3C /* flash-3.mp3 in Resources */,
 				625EAC7D1909ECFC00B37E3C /* abacus.png in Resources */,
 				625EAD4B1909ECFD00B37E3C /* pyramid.png in Resources */,
-				620EFFF5190DD6AA0003CBAB /* Looped Login Image.png in Resources */,
 				625EAD841909ECFD00B37E3C /* tennis.png in Resources */,
 				625EACC11909ECFD00B37E3C /* chess-castle.png in Resources */,
 				625EAD6F1909ECFD00B37E3C /* sofa.png in Resources */,
@@ -1853,8 +1861,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/barbarawong/Downloads,
@@ -1874,8 +1882,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/barbarawong/Downloads,
