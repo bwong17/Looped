@@ -336,6 +336,7 @@
 		625EADDA1909EE6400B37E3C /* veil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC01909EE6400B37E3C /* veil.mp3 */; };
 		625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC11909EE6400B37E3C /* wipe.mp3 */; };
 		625EADDC1909EE6400B37E3C /* zig-zag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC21909EE6400B37E3C /* zig-zag.mp3 */; };
+		62BC0AC5190DE2C200896DBE /* Looped Base Color.png in Resources */ = {isa = PBXBuildFile; fileRef = 62BC0AC4190DE2C200896DBE /* Looped Base Color.png */; };
 		E0919A571904B34700D1D50D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A561904B34700D1D50D /* Foundation.framework */; };
 		E0919A591904B34700D1D50D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A581904B34700D1D50D /* CoreGraphics.framework */; };
 		E0919A5B1904B34700D1D50D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A5A1904B34700D1D50D /* UIKit.framework */; };
@@ -710,6 +711,7 @@
 		625EADC01909EE6400B37E3C /* veil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = veil.mp3; sourceTree = "<group>"; };
 		625EADC11909EE6400B37E3C /* wipe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wipe.mp3; sourceTree = "<group>"; };
 		625EADC21909EE6400B37E3C /* zig-zag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zig-zag.mp3"; sourceTree = "<group>"; };
+		62BC0AC4190DE2C200896DBE /* Looped Base Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Base Color.png"; path = "../../Desktop/Looped Base Color.png"; sourceTree = "<group>"; };
 		E0919A531904B34600D1D50D /* Looped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0919A561904B34700D1D50D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0919A581904B34700D1D50D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1196,6 +1198,7 @@
 		E0919A5D1904B34700D1D50D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				62BC0AC4190DE2C200896DBE /* Looped Base Color.png */,
 				620EFFF4190DD6AA0003CBAB /* Looped Login Image.png */,
 				620EFFF2190DCFD60003CBAB /* Looped Text.png */,
 				625EADA81909EE6400B37E3C /* Sounds */,
@@ -1614,6 +1617,7 @@
 				625EAD571909ECFD00B37E3C /* ruler.png in Resources */,
 				625EAD7F1909ECFD00B37E3C /* sword.png in Resources */,
 				625EAC8C1909ECFC00B37E3C /* arrow-big-12.png in Resources */,
+				62BC0AC5190DE2C200896DBE /* Looped Base Color.png in Resources */,
 				625EAD5F1909ECFD00B37E3C /* search.png in Resources */,
 				625EAD891909ECFD00B37E3C /* thermometer.png in Resources */,
 				625EADCC1909EE6400B37E3C /* moon.mp3 in Resources */,
