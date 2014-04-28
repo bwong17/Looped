@@ -11,3 +11,5 @@
 
 #endif
 NSArray *soundsArray;
+NSString *soundLooping;
+NSURL *urlLooping;

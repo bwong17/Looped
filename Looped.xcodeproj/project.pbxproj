@@ -337,6 +337,11 @@
 		E0620504190DF34B00FD633B /* Looped Base Color.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620501190DF34B00FD633B /* Looped Base Color.png */; };
 		E0620505190DF34B00FD633B /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620502190DF34B00FD633B /* Looped Login Image.png */; };
 		E0620506190DF34B00FD633B /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620503190DF34B00FD633B /* Looped Text.png */; };
+		E0620508190DF9CF00FD633B /* Looped Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620507190DF9CF00FD633B /* Looped Icon.png */; };
+		E0620512190DFB7300FD633B /* Looped Logo tab icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */; };
+		E0620518190E07C800FD633B /* button-play.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620516190E07C800FD633B /* button-play.png */; };
+		E062051A190E090600FD633B /* button-playRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620519190E090600FD633B /* button-playRed.png */; };
+		E062051D190E111E00FD633B /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E062051C190E111E00FD633B /* RecordViewController.m */; };
 		E0919A571904B34700D1D50D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A561904B34700D1D50D /* Foundation.framework */; };
 		E0919A591904B34700D1D50D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A581904B34700D1D50D /* CoreGraphics.framework */; };
 		E0919A5B1904B34700D1D50D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A5A1904B34700D1D50D /* UIKit.framework */; };
@@ -712,6 +717,12 @@
 		E0620501190DF34B00FD633B /* Looped Base Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Base Color.png"; sourceTree = SOURCE_ROOT; };
 		E0620502190DF34B00FD633B /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Login Image.png"; sourceTree = SOURCE_ROOT; };
 		E0620503190DF34B00FD633B /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Text.png"; sourceTree = SOURCE_ROOT; };
+		E0620507190DF9CF00FD633B /* Looped Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Icon.png"; path = "../../Desktop/Looped/Looped Graphics/Looped Icon.png"; sourceTree = "<group>"; };
+		E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Logo tab icon 2.png"; path = "../../Desktop/Looped/Looped Graphics/Looped Logo tab icon 2.png"; sourceTree = "<group>"; };
+		E0620516190E07C800FD633B /* button-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-play.png"; path = "../../../Desktop/Looped/iconbeast-lite copy/iconbeast lite - png/button-play.png"; sourceTree = "<group>"; };
+		E0620519190E090600FD633B /* button-playRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-playRed.png"; path = "../../../Desktop/Looped/iconbeast-lite copy/iconbeast lite - png/button-playRed.png"; sourceTree = "<group>"; };
+		E062051B190E111E00FD633B /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		E062051C190E111E00FD633B /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		E0919A531904B34600D1D50D /* Looped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0919A561904B34700D1D50D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0919A581904B34700D1D50D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1000,6 +1011,7 @@
 				625EAC0F1909ECFC00B37E3C /* pie-chart.png */,
 				625EAC101909ECFC00B37E3C /* pine-tree.png */,
 				625EAC111909ECFC00B37E3C /* pipe.png */,
+				E0620519190E090600FD633B /* button-playRed.png */,
 				625EAC121909ECFC00B37E3C /* pizza.png */,
 				625EAC131909ECFC00B37E3C /* plier.png */,
 				625EAC141909ECFC00B37E3C /* plus-sign.png */,
@@ -1089,6 +1101,7 @@
 				625EAC681909ECFC00B37E3C /* uptrend.png */,
 				625EAC691909ECFC00B37E3C /* vector.png */,
 				625EAC6A1909ECFC00B37E3C /* wallet.png */,
+				E0620516190E07C800FD633B /* button-play.png */,
 				625EAC6B1909ECFC00B37E3C /* water hose.png */,
 				625EAC6C1909ECFC00B37E3C /* water-bottle.png */,
 				625EAC6D1909ECFC00B37E3C /* water.png */,
@@ -1199,6 +1212,8 @@
 			isa = PBXGroup;
 			children = (
 				E0620501190DF34B00FD633B /* Looped Base Color.png */,
+				E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */,
+				E0620507190DF9CF00FD633B /* Looped Icon.png */,
 				E0620502190DF34B00FD633B /* Looped Login Image.png */,
 				E0620503190DF34B00FD633B /* Looped Text.png */,
 				625EADA81909EE6400B37E3C /* Sounds */,
@@ -1233,6 +1248,8 @@
 		E0919CF11904BD3100D1D50D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E062051B190E111E00FD633B /* RecordViewController.h */,
+				E062051C190E111E00FD633B /* RecordViewController.m */,
 				E0919A6E1904B34800D1D50D /* NetworkViewController.h */,
 				E0919A6F1904B34800D1D50D /* NetworkViewController.m */,
 				E0919A711904B34800D1D50D /* PostingViewController.h */,
@@ -1404,6 +1421,7 @@
 				625EAD981909ECFD00B37E3C /* water hose.png in Resources */,
 				625EAD631909ECFD00B37E3C /* shield-round.png in Resources */,
 				625EAD231909ECFD00B37E3C /* mountain.png in Resources */,
+				E0620508190DF9CF00FD633B /* Looped Icon.png in Resources */,
 				625EACEB1909ECFD00B37E3C /* film-clap-board.png in Resources */,
 				625EAD3B1909ECFD00B37E3C /* picnic.png in Resources */,
 				625EAD8C1909ECFD00B37E3C /* tick.png in Resources */,
@@ -1610,6 +1628,7 @@
 				625EADCF1909EE6400B37E3C /* piston-2.mp3 in Resources */,
 				625EAD911909ECFD00B37E3C /* tree.png in Resources */,
 				625EACC71909ECFD00B37E3C /* coding.png in Resources */,
+				E0620512190DFB7300FD633B /* Looped Logo tab icon 2.png in Resources */,
 				625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */,
 				625EACFA1909ECFD00B37E3C /* graduation-cap.png in Resources */,
 				625EAC881909ECFC00B37E3C /* arrow-big-08.png in Resources */,
@@ -1642,7 +1661,9 @@
 				625EADD11909EE6400B37E3C /* prism-1.mp3 in Resources */,
 				625EACB31909ECFD00B37E3C /* button-stop.png in Resources */,
 				625EAD831909ECFD00B37E3C /* tea.png in Resources */,
+				E062051A190E090600FD633B /* button-playRed.png in Resources */,
 				625EACF41909ECFD00B37E3C /* fork-knife.png in Resources */,
+				E0620518190E07C800FD633B /* button-play.png in Resources */,
 				625EAC8F1909ECFC00B37E3C /* arrow-small-11.png in Resources */,
 				625EAC991909ECFC00B37E3C /* backpack.png in Resources */,
 				625EAD4F1909ECFD00B37E3C /* radioactive.png in Resources */,
@@ -1711,6 +1732,7 @@
 				E0919A701904B34800D1D50D /* NetworkViewController.m in Sources */,
 				E0919A671904B34700D1D50D /* LoopedAppDelegate.m in Sources */,
 				E0919CF01904BD0500D1D50D /* ProfileViewController.m in Sources */,
+				E062051D190E111E00FD633B /* RecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

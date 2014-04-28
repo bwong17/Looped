@@ -11,7 +11,7 @@
 
 NSString *currentSoundLabel;
 UIButton *currentSender;
-BOOL currentDone;
+BOOL currentDone = YES;
 NSURL *url;
 
 @implementation SoundsTableCell
@@ -29,8 +29,11 @@ NSURL *url;
 
 - (IBAction)playButtonPressed: (UIButton*)sender
 {
+    
     if(currentDone == YES){
         
+        [sender setImage:[UIImage imageNamed:@"button-playRed.png"]forState:UIControlStateNormal];
+
         currentSender = sender;
         currentSoundLabel = sender.titleLabel.text;
         
@@ -50,8 +53,8 @@ NSURL *url;
         }
         
         [_audioPlayer play];
+        
         currentDone = NO;
-        [sender setTintColor:[UIColor blueColor]];
     }
 }
 
@@ -59,16 +62,13 @@ NSURL *url;
 (AVAudioPlayer *)player successfully:(BOOL)flag
 {
         [_audioPlayer stop];
-        [currentSender setTintColor:[UIColor blackColor]];
+        [currentSender setImage:[UIImage imageNamed:@"button-play.png"]forState:UIControlStateNormal];
         currentDone = YES;
-}
-- (void)awakeFromNib
-{
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
+    //[super setSelected:selected animated:animated];
 
     //NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
     //NSError *error;
@@ -83,8 +83,8 @@ NSURL *url;
         //_audioPlayer.delegate = self;
        // [_audioPlayer prepareToPlay];
     //}
-    currentDone = YES;
     //[self performSegueWithIdentifier:@"toStartRecordingView" sender:self];
 }
+
 
 @end

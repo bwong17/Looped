@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *SoundTableView;
 ;
+@property (weak, nonatomic) IBOutlet UIButton *loopedButton;
 
 @end

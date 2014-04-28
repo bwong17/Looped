@@ -73,6 +73,14 @@
     [super didReceiveMemoryWarning];
 
 }
+- (IBAction)loopButtonPressed:(UIButton*)sender {
+    
+    soundLooping = sender.titleLabel.text;
+    NSLog(@"Set sound looping to %@",soundLooping);
+    urlLooping = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:soundLooping ofType:@"mp3"]];
+    
+    [self performSegueWithIdentifier:@"toRecord" sender:self];
+}
 
 -(NSInteger)numberOfSectionsInTableView :(UITableView *) tableView
 {
@@ -91,8 +99,16 @@
     
     int row = [indexPath row];
     
-    [cell.soundLabel setTitle:soundsArray[row] forState:UIControlStateNormal];
-    [cell.soundLabel setTitle:soundsArray[row] forState:UIControlStateSelected];
+    [cell.soundLabel setText:soundsArray[row]];
+    
+    [cell.playButton setTitle:soundsArray[row]
+        forState:UIControlStateNormal];
+    [cell.playButton setTitle:soundsArray[row] forState:UIControlStateSelected];
+    
+    [cell.loopButton setTitle:soundsArray[row]
+                     forState:UIControlStateNormal];
+    [cell.loopButton setTitle:soundsArray[row] forState:UIControlStateSelected];
+    
     
     return cell;
     

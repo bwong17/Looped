@@ -12,6 +12,7 @@
 @interface SoundsTableCell : UITableViewCell <AVAudioPlayerDelegate>
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
-@property (strong, nonatomic) IBOutlet UIButton *soundLabel;
+@property (strong, nonatomic) IBOutlet UILabel *soundLabel;
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *loopButton;
 @end
