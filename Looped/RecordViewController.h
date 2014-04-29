@@ -11,10 +11,10 @@
 
 
 
-@interface RecordViewController : UIViewController <AVAudioPlayerDelegate>
+@interface RecordViewController : UIViewController <AVAudioPlayerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (weak, nonatomic) IBOutlet UILabel *LoopingLabel;
-@property (weak, nonatomic) IBOutlet UIButton *playSound;
+@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *tappedGesture;
 
 @end

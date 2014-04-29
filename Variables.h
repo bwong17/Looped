@@ -13,3 +13,4 @@
 NSArray *soundsArray;
 NSString *soundLooping;
 NSURL *urlLooping;
+BOOL backFromSounds;

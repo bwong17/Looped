@@ -13,11 +13,10 @@
 @implementation RecordViewController
 
 @synthesize LoopingLabel;
-@synthesize playSound;
 
 BOOL done = YES;
 UIButton *currentSender;
-
+UILongPressGestureRecognizer *recognizer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,48 +26,67 @@ UIButton *currentSender;
     }
     return self;
 }
-- (IBAction)playSound:(UIButton *)sender {
+- (IBAction)backButton:(id)sender {
+    backFromSounds = YES;
+}
+
+- (IBAction)ScreenTaped:(UILongPressGestureRecognizer*)sender {
     
-    if(done == YES){
+    recognizer = sender;
+    NSLog(@"screen TOUCHED...");
+
+    if(sender.state == UIGestureRecognizerStateBegan){
+        NSLog(@"Gesture begin");
+        if(done == YES){
+            NSLog(@"song available to play");
+            //[sender setImage:[UIImage imageNamed:@"button-    playRed.png"]forState:UIControlStateNormal];
         
-        [sender setImage:[UIImage imageNamed:@"button-playRed.png"]forState:UIControlStateNormal];
+            //currentSender = sender;
+            //currentSoundLabel = sender.titleLabel.text;
         
-        currentSender = sender;
-        //currentSoundLabel = sender.titleLabel.text;
+            //url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
         
-        //url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
+            NSError *error;
         
-        NSError *error;
+            _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlLooping error:&error];
         
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlLooping error:&error];
-        
-        if (error)
-        {
-            NSLog(@"Error in audioPlayer: %@",
+            if (error)
+            {
+                NSLog(@"Error in audioPlayer: %@",
                   [error localizedDescription]);
-        } else {
-            _audioPlayer.delegate = self;
-            [_audioPlayer prepareToPlay];
+            } else {
+                _audioPlayer.delegate = self;
+                [_audioPlayer prepareToPlay];
+            }
+        
+            [_audioPlayer play];
+            NSLog(@"play");
+            done = NO;
+            NSLog(@"done %d",done);
+        }else{
+            NSLog(@"Song NOT available to play yet");
         }
-        
-        [_audioPlayer play];
-        
-        done = NO;
+    }else if (sender.state == UIGestureRecognizerStateEnded){
+        printf("Gesture Released");
+        [_audioPlayer stop];
+        done = YES;
     }
-    
 }
 
 -(void)audioPlayerDidFinishPlaying:
 (AVAudioPlayer *)player successfully:(BOOL)flag
 {
+    NSLog(@"audio player finished playing");
+
     [_audioPlayer stop];
-    [currentSender setImage:[UIImage imageNamed:@"button-play.png"]forState:UIControlStateNormal];
+    //[currentSender setImage:[UIImage imageNamed:@"button-play.png"]forState:UIControlStateNormal];
     done = YES;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    done = YES;
     self.LoopingLabel.text = [NSString stringWithFormat:@"Looping %@ file",soundLooping];
 }
 

@@ -350,8 +350,8 @@
 		E0919A671904B34700D1D50D /* LoopedAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919A661904B34700D1D50D /* LoopedAppDelegate.m */; };
 		E0919A6A1904B34800D1D50D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0919A681904B34800D1D50D /* Main_iPhone.storyboard */; };
 		E0919A6D1904B34800D1D50D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0919A6B1904B34800D1D50D /* Main_iPad.storyboard */; };
-		E0919A701904B34800D1D50D /* NetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919A6F1904B34800D1D50D /* NetworkViewController.m */; };
-		E0919A731904B34800D1D50D /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919A721904B34800D1D50D /* PostingViewController.m */; };
+		E0919A701904B34800D1D50D /* NewsfeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919A6F1904B34800D1D50D /* NewsfeedViewController.m */; };
+		E0919A731904B34800D1D50D /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919A721904B34800D1D50D /* ExploreViewController.m */; };
 		E0919A751904B34A00D1D50D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0919A741904B34A00D1D50D /* Images.xcassets */; };
 		E0919A7C1904B34A00D1D50D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A7B1904B34A00D1D50D /* XCTest.framework */; };
 		E0919A7D1904B34A00D1D50D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A561904B34700D1D50D /* Foundation.framework */; };
@@ -374,6 +374,7 @@
 		E0919D1919078FD300D1D50D /* SoundsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0919D1819078FD300D1D50D /* SoundsTableCell.m */; };
 		E0919D1B1907A74C00D1D50D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919D1A1907A74C00D1D50D /* AVFoundation.framework */; };
 		E0919F821909EAF100D1D50D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919F811909EAF100D1D50D /* Parse.framework */; };
+		E0F94A02190F8346001B5B22 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F94A01190F8346001B5B22 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -735,10 +736,10 @@
 		E0919A661904B34700D1D50D /* LoopedAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoopedAppDelegate.m; sourceTree = "<group>"; };
 		E0919A691904B34800D1D50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		E0919A6C1904B34800D1D50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		E0919A6E1904B34800D1D50D /* NetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkViewController.h; sourceTree = "<group>"; };
-		E0919A6F1904B34800D1D50D /* NetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkViewController.m; sourceTree = "<group>"; };
-		E0919A711904B34800D1D50D /* PostingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
-		E0919A721904B34800D1D50D /* PostingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
+		E0919A6E1904B34800D1D50D /* NewsfeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsfeedViewController.h; sourceTree = "<group>"; };
+		E0919A6F1904B34800D1D50D /* NewsfeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsfeedViewController.m; sourceTree = "<group>"; };
+		E0919A711904B34800D1D50D /* ExploreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
+		E0919A721904B34800D1D50D /* ExploreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		E0919A741904B34A00D1D50D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E0919A7A1904B34A00D1D50D /* LoopedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoopedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0919A7B1904B34A00D1D50D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -767,6 +768,8 @@
 		E0919D1819078FD300D1D50D /* SoundsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundsTableCell.m; sourceTree = "<group>"; };
 		E0919D1A1907A74C00D1D50D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E0919F811909EAF100D1D50D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		E0F94A00190F8346001B5B22 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E0F94A01190F8346001B5B22 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1250,10 +1253,10 @@
 			children = (
 				E062051B190E111E00FD633B /* RecordViewController.h */,
 				E062051C190E111E00FD633B /* RecordViewController.m */,
-				E0919A6E1904B34800D1D50D /* NetworkViewController.h */,
-				E0919A6F1904B34800D1D50D /* NetworkViewController.m */,
-				E0919A711904B34800D1D50D /* PostingViewController.h */,
-				E0919A721904B34800D1D50D /* PostingViewController.m */,
+				E0919A6E1904B34800D1D50D /* NewsfeedViewController.h */,
+				E0919A6F1904B34800D1D50D /* NewsfeedViewController.m */,
+				E0919A711904B34800D1D50D /* ExploreViewController.h */,
+				E0919A721904B34800D1D50D /* ExploreViewController.m */,
 				E0919CEF1904BD0500D1D50D /* ProfileViewController.m */,
 				E0919CEE1904BD0500D1D50D /* ProfileViewController.h */,
 				E0919CF41904BD8D00D1D50D /* LoginViewController.h */,
@@ -1264,6 +1267,8 @@
 				E0919D1519078FB100D1D50D /* SoundsViewController.m */,
 				E0919D1719078FD300D1D50D /* SoundsTableCell.h */,
 				E0919D1819078FD300D1D50D /* SoundsTableCell.m */,
+				E0F94A00190F8346001B5B22 /* SettingsViewController.h */,
+				E0F94A01190F8346001B5B22 /* SettingsViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1725,12 +1730,13 @@
 			files = (
 				E0919CF91904F39600D1D50D /* NewAccountViewController.m in Sources */,
 				E0919A631904B34700D1D50D /* main.m in Sources */,
-				E0919A731904B34800D1D50D /* PostingViewController.m in Sources */,
+				E0919A731904B34800D1D50D /* ExploreViewController.m in Sources */,
 				E0919CF61904BD8D00D1D50D /* LoginViewController.m in Sources */,
 				E0919D1619078FB100D1D50D /* SoundsViewController.m in Sources */,
 				E0919D1919078FD300D1D50D /* SoundsTableCell.m in Sources */,
-				E0919A701904B34800D1D50D /* NetworkViewController.m in Sources */,
+				E0919A701904B34800D1D50D /* NewsfeedViewController.m in Sources */,
 				E0919A671904B34700D1D50D /* LoopedAppDelegate.m in Sources */,
+				E0F94A02190F8346001B5B22 /* SettingsViewController.m in Sources */,
 				E0919CF01904BD0500D1D50D /* ProfileViewController.m in Sources */,
 				E062051D190E111E00FD633B /* RecordViewController.m in Sources */,
 			);

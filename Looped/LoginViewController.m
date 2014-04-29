@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "NetworkViewController.h"
+#import "NewsfeedViewController.h"
 #import "Variables.h"
 #import "Parse/Parse.h"
 

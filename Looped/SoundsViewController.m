@@ -63,11 +63,6 @@
 */
 }
 
-- (IBAction)backButtonPressed:(UIButton *)sender {
-    
-    [self performSegueWithIdentifier:@"SoundsViewToTab" sender:self];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
