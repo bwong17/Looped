@@ -15,6 +15,5 @@
 
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (weak, nonatomic) IBOutlet UILabel *LoopingLabel;
-@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *tappedGesture;
 
 @end

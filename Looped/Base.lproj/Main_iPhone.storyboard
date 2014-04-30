@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9G-qh-c84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="1025"/>
+            <point key="canvasLocation" x="754" y="1145"/>
         </scene>
         <!--Sounds View Controller - Loop-->
         <scene sceneID="Hls-Vg-tob">
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zx7-o7-R2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="367"/>
+            <point key="canvasLocation" x="437" y="407"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="bup-Sy-F7e">
@@ -265,7 +265,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="829" y="367"/>
+            <point key="canvasLocation" x="925" y="407"/>
         </scene>
         <!--Profile View Controller - Item-->
         <scene sceneID="oTk-0j-fPx">
@@ -402,7 +402,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="138" y="973"/>
+            <point key="canvasLocation" x="210" y="1093"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Q4F-Pt-dI3">
@@ -657,7 +657,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-198" y="280"/>
+            <point key="canvasLocation" x="-150" y="384"/>
         </scene>
     </scenes>
     <resources>
@@ -679,7 +679,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GdP-Ar-mZT"/>
+        <segue reference="4E4-gD-xPq"/>
         <segue reference="BFA-LC-tqH"/>
         <segue reference="4ai-PL-TmO"/>
     </inferredMetricsTieBreakers>
