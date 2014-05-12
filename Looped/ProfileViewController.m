@@ -19,6 +19,8 @@
 @synthesize birthdayMonth;
 @synthesize birthdayYear;
 @synthesize emailField;
+@synthesize statusIndicator;
+@synthesize emailVerified;
 
 - (void)viewDidLoad
 {
@@ -27,6 +29,9 @@
     [self.birthdayMonth setDelegate:self];
     [self.birthdayYear setDelegate:self];
     [self.emailField setDelegate:self];
+    
+    self.statusIndicator.hidden = NO;
+    [statusIndicator startAnimating];
     
     PFUser *currentUser = [PFUser currentUser];
     
@@ -43,12 +48,22 @@
             NSString *month = loggedUser[@"birthMonth"];
             NSString *day = loggedUser[@"birthDay"];
             NSString *year = loggedUser[@"birthYear"];
+            NSString *email = loggedUser[@"email"];
             
             self.firstNameLabel.text = firstName;
             self.lastNameLabel.text = lastName;
             self.birthdayMonth.text = month;
             self.birthdayDay.text = day;
             self.birthdayYear.text = year;
+            self.emailField.text = email;
+                        
+            if(loggedUser[@"emailVerified"]){
+                self.emailVerified.text = @"Verified";
+                [self.emailVerified setTextColor:[UIColor greenColor]];
+            }else{
+                self.emailVerified.text = @"Not Verified";
+                [self.emailVerified setTextColor:[UIColor redColor]];
+            }
             
             if([gender isEqualToString:@"Female"]){
                 self.profileImage.image = [UIImage imageNamed:@"woman.png"];
@@ -57,8 +72,30 @@
             }else{
                 self.profileImage.image = [UIImage imageNamed:@"camera.png"];
             }
+            self.statusIndicator.hidden = YES;
+            [statusIndicator stopAnimating];
     }];
     
+    
+}
+- (IBAction)EmailEditting:(UITextField *)sender {
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *loggedUser, NSError *error) {
+    
+        loggedUser[@"email"] = self.emailField.text;
+
+        self.emailVerified.text = @"Not Verified";
+        [self.emailVerified setTextColor:[UIColor redColor]];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verify Email" message: @"An email has been sent to verify your account." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+        [loggedUser saveInBackground];
+    }];
+    
+
 }
 
 - (IBAction)backgroundTap:(id)sender {
@@ -106,19 +143,24 @@
     
         [currentUser saveInBackground];
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: @"Your birth year is invalid. Try Again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: @"Your birth year is invalid. Must be 18 years or older. Try Again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [alert show];
     }
 }
 
 - (IBAction)LogOut:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"Are you sure you want to log out?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+    
+    [alert show];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     PFUser *currentUser = [PFUser currentUser];
-    //NSLog(@"Current user being logged out:%@",currentUser);
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log out" message:@"Are you sure you want to log out?" delegate:self cancelButtonTitle:@"Nevermind" otherButtonTitles:@"Yes", nil];
-    //[alert show];
-    [PFUser logOut];
-    currentUser = nil;
-    [self performSegueWithIdentifier:@"loggingOut" sender:self];
+    if (buttonIndex == 1) {
+        [PFUser logOut];
+        currentUser = nil;
+        [self performSegueWithIdentifier:@"loggingOut" sender:self];
+    }
 }
 @end

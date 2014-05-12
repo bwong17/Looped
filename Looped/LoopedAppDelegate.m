@@ -8,6 +8,12 @@
 
 #import "LoopedAppDelegate.h"
 #import "Parse/Parse.h"
+#import "NewsfeedViewController.h"
+#import "ExploreViewController.h"
+#import "ProfileViewController.h"
+#import "SoundsViewController.h"
+#import "SettingsViewController.h"
+
 
 @implementation LoopedAppDelegate
 
@@ -16,9 +22,10 @@
     [Parse setApplicationId:@"XFsTOWNqoJwp7p59x6gMZR31KydV5FtjAe3v9bhH"
                   clientKey:@"Uqn4AGGs5i4kKogMqKStmzr1Zc2yA4nkbyCcOyVS"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

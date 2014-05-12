@@ -16,6 +16,7 @@
 @synthesize userName;
 @synthesize password;
 @synthesize topBar;
+@synthesize statusIndicator;
 
 - (void)viewDidLoad
 {
@@ -23,6 +24,7 @@
     [self.userName setDelegate:self];
     [self.password setDelegate:self];
     
+    self.statusIndicator.hidden = YES;
     PFUser *currentUser = [PFUser currentUser];
     if(currentUser){
         self.userName.text = currentUser.username;
@@ -60,9 +62,7 @@
     
     self.topBar.frame = CGRectMake(self.topBar.frame.origin.x,self.topBar.frame.origin.y + 150,self.topBar.frame.size.width, self.topBar.frame.size.height);
 }
-- (IBAction)creatingAccount:(id)sender {
-    [self performSegueWithIdentifier:@"creatingAccount" sender:self];
-}
+
 
 -(void)textFieldDidEndEditing:(UITextField *)textfield
 {
@@ -71,17 +71,35 @@
     self.topBar.frame = CGRectMake(self.topBar.frame.origin.x,self.topBar.frame.origin.y - 150,self.topBar.frame.size.width, self.topBar.frame.size.height);
 }
 
+- (IBAction)creatingAccount:(id)sender {
+    [self performSegueWithIdentifier:@"creatingAccount" sender:self];
+}
+
 -(IBAction)LogIn:(id)sender
 {
+    [self textFieldShouldReturn:password];
+    
+    self.statusIndicator.hidden = NO;
+    [statusIndicator startAnimating];
+    
     [PFUser logInWithUsernameInBackground:self.userName.text password:self.password.text block:^(PFUser *user, NSError *error) {
-         if (user) {
+        
+        [statusIndicator stopAnimating];
+        
+        if (user) {
             NSString *welcome  = [NSString stringWithFormat:@"%@ %@ %@",@"Welcome back",user.username,@"!"];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:welcome message: @"Your Looped Account has been loaded" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
                  [alert show];
-             [self performSegueWithIdentifier:@"logInSuccess" sender:self];
-         } else {
+            
+            [self performSegueWithIdentifier:@"logInSuccess" sender:self];
+         
+        } else {
+             self.statusIndicator.hidden = YES;
+             [statusIndicator stopAnimating];
+            
             NSString *errorString = [error userInfo][@"error"];
              UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Account Info" message:errorString delegate:self cancelButtonTitle:@"dismiss"otherButtonTitles:nil];
+             
               [alert show];
           }
     }];

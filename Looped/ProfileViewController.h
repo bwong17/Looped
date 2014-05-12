@@ -19,4 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *ProfileLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *statusIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *emailVerified;
 @end

@@ -14,11 +14,19 @@
 
 - (void)viewDidLoad
 {
-    if(backFromSounds){
-        backFromSounds = NO;
-        [self performSegueWithIdentifier:@"back" sender:self];
-    }
     [super viewDidLoad];
+    
+    //orange
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:(236/255.0) green:(154/255.0) blue:(61/255.0) alpha:1.0]];
+    //[[UITabBar appearance] setTintColor:[UIColor grayColor]];
+    
+    
+    //red
+    //[[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:(225/255.0) green:(100/255.0) blue:(91/255.0) alpha:1.0]];
+
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:(225/255.0) green:(100/255.0) blue:(91/255.0) alpha:1.0],NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning

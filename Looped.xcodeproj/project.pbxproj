@@ -334,7 +334,7 @@
 		625EADDA1909EE6400B37E3C /* veil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC01909EE6400B37E3C /* veil.mp3 */; };
 		625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC11909EE6400B37E3C /* wipe.mp3 */; };
 		625EADDC1909EE6400B37E3C /* zig-zag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC21909EE6400B37E3C /* zig-zag.mp3 */; };
-		E0620504190DF34B00FD633B /* Looped Base Color.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620501190DF34B00FD633B /* Looped Base Color.png */; };
+		E0620504190DF34B00FD633B /* Looped_Base_Color.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620501190DF34B00FD633B /* Looped_Base_Color.png */; };
 		E0620505190DF34B00FD633B /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620502190DF34B00FD633B /* Looped Login Image.png */; };
 		E0620506190DF34B00FD633B /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620503190DF34B00FD633B /* Looped Text.png */; };
 		E0620508190DF9CF00FD633B /* Looped Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620507190DF9CF00FD633B /* Looped Icon.png */; };
@@ -715,7 +715,7 @@
 		625EADC01909EE6400B37E3C /* veil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = veil.mp3; sourceTree = "<group>"; };
 		625EADC11909EE6400B37E3C /* wipe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wipe.mp3; sourceTree = "<group>"; };
 		625EADC21909EE6400B37E3C /* zig-zag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zig-zag.mp3"; sourceTree = "<group>"; };
-		E0620501190DF34B00FD633B /* Looped Base Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Base Color.png"; sourceTree = SOURCE_ROOT; };
+		E0620501190DF34B00FD633B /* Looped_Base_Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Looped_Base_Color.png; sourceTree = SOURCE_ROOT; };
 		E0620502190DF34B00FD633B /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Login Image.png"; sourceTree = SOURCE_ROOT; };
 		E0620503190DF34B00FD633B /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Text.png"; sourceTree = SOURCE_ROOT; };
 		E0620507190DF9CF00FD633B /* Looped Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Icon.png"; path = "../../Desktop/Looped/Looped Graphics/Looped Icon.png"; sourceTree = "<group>"; };
@@ -1214,7 +1214,7 @@
 		E0919A5D1904B34700D1D50D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E0620501190DF34B00FD633B /* Looped Base Color.png */,
+				E0620501190DF34B00FD633B /* Looped_Base_Color.png */,
 				E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */,
 				E0620507190DF9CF00FD633B /* Looped Icon.png */,
 				E0620502190DF34B00FD633B /* Looped Login Image.png */,
@@ -1497,7 +1497,7 @@
 				625EAD301909ECFD00B37E3C /* paint-roller.png in Resources */,
 				625EAD5C1909ECFD00B37E3C /* screen-area.png in Resources */,
 				625EACCD1909ECFD00B37E3C /* contrast.png in Resources */,
-				E0620504190DF34B00FD633B /* Looped Base Color.png in Resources */,
+				E0620504190DF34B00FD633B /* Looped_Base_Color.png in Resources */,
 				625EACB91909ECFD00B37E3C /* car-battery.png in Resources */,
 				625EAC9D1909ECFC00B37E3C /* battery-full.png in Resources */,
 				625EAC971909ECFC00B37E3C /* awareness-ribbon.png in Resources */,

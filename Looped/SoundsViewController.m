@@ -37,6 +37,8 @@
     self.SoundTableView.dataSource = self;
     [super viewDidLoad];
     
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
+
     soundsArray = [[NSMutableArray alloc]init];
     soundsArray = @[@"bubbles",@"clay",@"confetti",@"corona",@"dotted-spiral",@"flash-1",@"flash-2",@"flash-3",@"glimmer",@"moon",@"pinwheel",@"piston-1",@"piston-2",@"piston-3",@"prism-1",@"prism-2",@"prism-3",@"splits",@"squiggle",@"strike",@"suspension",@"timer",@"ufo",@"veil",@"wipe",@"zig-zag",];
     
