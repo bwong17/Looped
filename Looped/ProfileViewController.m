@@ -11,7 +11,6 @@
 #import "Parse/Parse.h"
 
 @implementation ProfileViewController
-@synthesize ProfileLabel;
 @synthesize firstNameLabel;
 @synthesize lastNameLabel;
 @synthesize profileImage;
@@ -21,14 +20,11 @@
 @synthesize emailField;
 @synthesize statusIndicator;
 @synthesize emailVerified;
+@synthesize bar;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.birthdayDay setDelegate:self];
-    [self.birthdayMonth setDelegate:self];
-    [self.birthdayYear setDelegate:self];
-    [self.emailField setDelegate:self];
     
     self.statusIndicator.hidden = NO;
     [statusIndicator startAnimating];
@@ -36,7 +32,8 @@
     PFUser *currentUser = [PFUser currentUser];
     
     NSString *label = [NSString stringWithFormat:@"%@'s Profile",currentUser.username];
-    self.ProfileLabel.text = label;
+    
+    self.bar.title = label;
     
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
         [query getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *loggedUser, NSError *error) {
@@ -56,8 +53,10 @@
             self.birthdayDay.text = day;
             self.birthdayYear.text = year;
             self.emailField.text = email;
-                        
-            if(loggedUser[@"emailVerified"]){
+            
+            verified = loggedUser[@"emailVerified"];
+            
+            if(verified.intValue == 1){
                 self.emailVerified.text = @"Verified";
                 [self.emailVerified setTextColor:[UIColor greenColor]];
             }else{
@@ -76,91 +75,16 @@
             [statusIndicator stopAnimating];
     }];
     
-    
 }
-- (IBAction)EmailEditting:(UITextField *)sender {
+- (IBAction)refreshProfile:(id)sender {
     
-    PFUser *currentUser = [PFUser currentUser];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    [query getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *loggedUser, NSError *error) {
-    
-        loggedUser[@"email"] = self.emailField.text;
-
-        self.emailVerified.text = @"Not Verified";
-        [self.emailVerified setTextColor:[UIColor redColor]];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verify Email" message: @"An email has been sent to verify your account." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alert show];
-        [loggedUser saveInBackground];
-    }];
-    
+    [self viewDidLoad];
 
 }
 
-- (IBAction)backgroundTap:(id)sender {
-    [self.view endEditing:YES];
+- (IBAction)editProfileButton:(id)sender {
+    
+    [self performSegueWithIdentifier:@"editProfile" sender:self];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return NO;
-}
-
-- (IBAction)edittedBirthMonth:(UITextField *)sender {
-
-    PFUser *currentUser = [PFUser currentUser];
-    
-    if(self.birthdayMonth.text.intValue < 12 && self.birthdayMonth.text.intValue > 1){
-        currentUser[@"birthMonth"] = self.birthdayMonth.text;
-        [currentUser saveInBackground];
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: @"Your birth month is invalid. Try Again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-- (IBAction)edittedBirthDay:(UITextField *)sender {
-    
-    PFUser *currentUser = [PFUser currentUser];
-
-    if(self.birthdayDay.text.intValue < 31 && self.birthdayDay.text.intValue > 0){
-        currentUser[@"birthDay"] = self.birthdayDay.text;
-        [currentUser saveInBackground];
-    }
-    else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: @"Your birth day is invalid. Try Again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alert show];
-    }
-
-}
-- (IBAction)edittedBirthYear:(UITextField *)sender {
-    
-    PFUser *currentUser = [PFUser currentUser];
-    
-    if(self.birthdayYear.text.intValue < 1996 && self.birthdayYear.text.intValue > 1930){
-        currentUser[@"birthYear"] = self.birthdayYear.text;
-    
-        [currentUser saveInBackground];
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: @"Your birth year is invalid. Must be 18 years or older. Try Again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
-- (IBAction)LogOut:(id)sender {
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"Are you sure you want to log out?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
-    
-    [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    PFUser *currentUser = [PFUser currentUser];
-    if (buttonIndex == 1) {
-        [PFUser logOut];
-        currentUser = nil;
-        [self performSegueWithIdentifier:@"loggingOut" sender:self];
-    }
-}
 @end

@@ -40,7 +40,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     
     currentRow = 0;
     currentCol = 0;
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
     
     /*
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -74,7 +74,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
             
             printf("%d%d(%d)",i,j,soundBox[i][j].state);
         }
-        soundBox[i][0].startTime = 0.0 + timeInterval;
+        soundBox[i][0].startTime = 0.0;
         soundBox[i][1].startTime = soundBox[i][0].startTime + timeInterval;
         soundBox[i][2].startTime = soundBox[i][1].startTime + timeInterval;
         
@@ -152,13 +152,14 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     
     [audioPlayer prepareToPlay];
     
+    
     //use
     if(soundBox[currentRow][currentCol].state == 1){
         
         audioPlayer.volume = 1.0;
         audioPlayer.currentTime = soundBox[currentRow][currentCol].startTime;
         printf("Box %d %d state use at %f to %f\n",currentRow,currentCol, audioPlayer.currentTime,audioPlayer.currentTime + timeInterval);
-                
+        
         [audioPlayer play];
         self.timer = [NSTimer
                       scheduledTimerWithTimeInterval: timeInterval

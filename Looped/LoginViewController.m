@@ -97,12 +97,20 @@
              self.statusIndicator.hidden = YES;
              [statusIndicator stopAnimating];
             
-            NSString *errorString = [error userInfo][@"error"];
-             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Account Info" message:errorString delegate:self cancelButtonTitle:@"dismiss"otherButtonTitles:nil];
+            NSString *errorString = @"Invalid username or password";
+            
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Incorrect Account Info" message:errorString delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:@"Forgot", nil];
              
               [alert show];
           }
     }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        [self performSegueWithIdentifier:@"resetView" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning

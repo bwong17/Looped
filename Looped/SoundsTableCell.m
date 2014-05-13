@@ -68,22 +68,6 @@ NSURL *url;
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    //[super setSelected:selected animated:animated];
-
-    //NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:currentSoundLabel ofType:@"mp3"]];
-    //NSError *error;
-    
-    //_audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    
-    //if (error)
-    //{
-     ////   NSLog(@"Error in audioPlayer: %@",
-              //[error localizedDescription]);
-    //} else {
-        //_audioPlayer.delegate = self;
-       // [_audioPlayer prepareToPlay];
-    //}
-    //[self performSegueWithIdentifier:@"toStartRecordingView" sender:self];
 }
 
 

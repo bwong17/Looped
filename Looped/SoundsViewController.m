@@ -37,8 +37,21 @@
     self.SoundTableView.dataSource = self;
     [super viewDidLoad];
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
+    /*
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,shadow, NSShadowAttributeName,[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    */
+    //[[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], [UIFont fontWithName:@"System" size:21.0], nil]];
+    
+    /*
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
 
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+     */
+    
     soundsArray = [[NSMutableArray alloc]init];
     soundsArray = @[@"bubbles",@"clay",@"confetti",@"corona",@"dotted-spiral",@"flash-1",@"flash-2",@"flash-3",@"glimmer",@"moon",@"pinwheel",@"piston-1",@"piston-2",@"piston-3",@"prism-1",@"prism-2",@"prism-3",@"splits",@"squiggle",@"strike",@"suspension",@"timer",@"ufo",@"veil",@"wipe",@"zig-zag",];
     
@@ -63,6 +76,11 @@
         //NSLog(@"ScoreArray %@",tempArray);
     }];
 */
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning

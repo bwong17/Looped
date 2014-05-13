@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "Parse/Parse.h"
 
 @interface SettingsViewController ()
 
@@ -35,15 +36,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+ - (IBAction)LogOut:(id)sender {
+ 
+ UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"Are you sure you want to log out?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
+ 
+ [alert show];
+ }
+ 
+ 
+ - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+     PFUser *currentUser = [PFUser currentUser];
+     if (buttonIndex == 1) {
+         [PFUser logOut];
+         currentUser = nil;
+         [self performSegueWithIdentifier:@"loggingOut" sender:self];
+     }
+ }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+/*
+ - (IBAction)EmailEditting:(UITextField *)sender {
+ 
+ PFUser *currentUser = [PFUser currentUser];
+ 
+ PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+ [query getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *loggedUser, NSError *error) {
+ 
+ loggedUser[@"email"] = self.emailField.text;
+ 
+ self.emailVerified.text = @"Not Verified";
+ [self.emailVerified setTextColor:[UIColor redColor]];
+ 
+ UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verify Email" message: @"An email has been sent to verify your account." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+ [alert show];
+ [loggedUser saveInBackground];
+ }];
+ }
+ */
+
 
 @end

@@ -12,13 +12,13 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *birthdayMonth;
-@property (weak, nonatomic) IBOutlet UITextField *birthdayDay;
-@property (weak, nonatomic) IBOutlet UITextField *birthdayYear;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UILabel *birthdayMonth;
+@property (weak, nonatomic) IBOutlet UILabel *birthdayDay;
+@property (weak, nonatomic) IBOutlet UILabel *birthdayYear;
+@property (weak, nonatomic) IBOutlet UILabel *emailField;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *ProfileLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *statusIndicator;
+@property (weak, nonatomic) IBOutlet UINavigationItem *bar;
 @property (weak, nonatomic) IBOutlet UILabel *emailVerified;
 @end
