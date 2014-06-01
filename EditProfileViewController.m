@@ -9,6 +9,7 @@
 #import "EditProfileViewController.h"
 #import "Parse/Parse.h"
 #import "Variables.h"
+#import "AssetsLibrary/AssetsLibrary.h"
 
 @interface EditProfileViewController ()
 
@@ -25,6 +26,11 @@
 @synthesize emailField;
 @synthesize spinner;
 @synthesize resetButton;
+
+
+int photoTaken;
+
+-(BOOL) shouldAutorotate { return NO; }
 
 - (void)viewDidLoad
 {
@@ -170,6 +176,125 @@
  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message: @"Your birth year is invalid. Must be 18 years or older. Try Again." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
  [alert show];
  }
+}
+- (IBAction)changeProfilePicture:(UIButton *)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Change Profile Picture" message:@"Choose an option" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Take Photo", @"Choose Existing",nil];
+    
+    [alert show];
+    
+}
+
+-(void) takePhoto{
+    
+    printf("taking photo\n");
+    
+    picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self;
+    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+
+    [self presentViewController:picker animated:YES completion:NULL];
+    //[picker release];
+    
+    photoTaken = 1;
+    
+}
+
+-(void) chooseExisting{
+    
+    printf("choosing from existing\n");
+    picker2 = [[UIImagePickerController alloc]init];
+    picker2.delegate = self;
+    [picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:picker2 animated:YES completion:NULL];
+    //[picker2 release];
+    
+    photoTaken = 0;
+    
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    PFUser *currentUser = [PFUser currentUser];
+    NSURL *imageFileURL;
+    
+    if(photoTaken){
+        // to save picture if taken
+        UIImage *temp = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        NSLog(@"new photo taken %@",temp);
+        
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        // Request to save the image to camera roll
+        [library writeImageToSavedPhotosAlbum:[temp CGImage] orientation:(ALAssetOrientation)[temp imageOrientation] completionBlock:^(NSURL *assetURL, NSError *error){
+            if (error) {
+                NSLog(@"error");
+            } else {
+                NSLog(@"url %@", assetURL);
+            }
+            
+            currentUser[@"profilePic"] = [NSString stringWithFormat:@"%@",assetURL];
+            
+            [currentUser saveInBackground];
+            
+            [self dismissViewControllerAnimated:YES completion:NULL];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                            message:@"New profile picture set."
+                                                           delegate:self cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+        }];  
+        
+    }else{
+        imageFileURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+         NSLog(@"url %@",imageFileURL);
+        
+        currentUser[@"profilePic"] = [NSString stringWithFormat:@"%@",imageFileURL];
+        
+        [currentUser saveInBackground];
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                        message:@"New profile picture set."
+                                                       delegate:self cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    UIAlertView *alert;
+    
+    // Unable to save the image
+    if (error)
+        alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                           message:@"Unable to save image to Photo Album."
+                                          delegate:self cancelButtonTitle:@"Ok"
+                                 otherButtonTitles:nil];
+    else // All is well
+        alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                           message:@"Image saved to Photo Album."
+                                          delegate:self cancelButtonTitle:@"Ok"
+                                 otherButtonTitles:nil];
+    [alert show];
+}
+
+-(void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1)[self takePhoto];
+    if (buttonIndex == 2)[self chooseExisting];
+
 }
 
 @end

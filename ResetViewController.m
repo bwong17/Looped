@@ -25,6 +25,8 @@
     return self;
 }
 
+-(BOOL) shouldAutorotate { return NO; }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,6 +41,7 @@
     [textField resignFirstResponder];
     return NO;
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

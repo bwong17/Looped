@@ -14,7 +14,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 }
+
+-(BOOL) shouldAutorotate { return NO; }
 
 - (void)didReceiveMemoryWarning
 {

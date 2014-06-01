@@ -23,16 +23,19 @@
     [super viewDidLoad];
     [self.userName setDelegate:self];
     [self.password setDelegate:self];
-    
     self.statusIndicator.hidden = YES;
     PFUser *currentUser = [PFUser currentUser];
     if(currentUser){
         self.userName.text = currentUser.username;
         self.createAccountButton.enabled = NO;
+        self.createAccountButton.titleLabel.textColor = [UIColor blackColor];
     }else{
         self.createAccountButton.enabled = YES;
+        self.createAccountButton.titleLabel.textColor = [UIColor whiteColor];
     }
 }
+
+-(BOOL) shouldAutorotate { return NO; }
 
 - (IBAction)backgroundTap:(id)sender {
     [self.view endEditing:YES];
@@ -42,19 +45,6 @@
     [textField resignFirstResponder];
     return NO;
 }
-
--(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
-}
-
--(NSUInteger) supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation{
-    return UIInterfaceOrientationPortrait;
-}
-
 
 -(void)textFieldDidBeginEditing:(UITextField *)textfield
 {
@@ -87,9 +77,9 @@
         [statusIndicator stopAnimating];
         
         if (user) {
-            NSString *welcome  = [NSString stringWithFormat:@"%@ %@ %@",@"Welcome back",user.username,@"!"];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:welcome message: @"Your Looped Account has been loaded" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-                 [alert show];
+            //NSString *welcome  = [NSString stringWithFormat:@"%@ %@ %@",@"Welcome back",user.username,@"!"];
+            //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:welcome message: @"Your Looped Account has been loaded" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                 //[alert show];
             
             [self performSegueWithIdentifier:@"logInSuccess" sender:self];
          

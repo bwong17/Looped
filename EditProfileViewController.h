@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditProfileViewController : UIViewController <UITextFieldDelegate>
+@interface EditProfileViewController : UIViewController <UIImagePickerControllerDelegate, UITextFieldDelegate> {
+
+    UIImagePickerController *picker;
+    UIImagePickerController *picker2;
+    UIImage *image;
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
@@ -21,4 +26,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
 @end

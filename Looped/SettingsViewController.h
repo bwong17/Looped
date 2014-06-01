@@ -10,4 +10,7 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *connectFacebookButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+
 @end

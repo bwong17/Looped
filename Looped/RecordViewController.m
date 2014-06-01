@@ -16,11 +16,15 @@
 @implementation RecordViewController
 
 @synthesize timer = mTimer;
-@synthesize LoopingLabel;
+//@synthesize LoopingLabel;
 @synthesize recorder;
 @synthesize audioPlayBackPlayer;
 @synthesize audioPlayer;
-
+@synthesize BoxToMove;
+@synthesize startPoint;
+@synthesize recognizer;
+@synthesize landscapeView;
+@synthesize slider;
 
 BOOL done = YES;
 UIButton *currentSender;
@@ -30,16 +34,87 @@ int currentRow;
 int currentCol;
 NSTimeInterval timeInterval;
 
+float currentSliderVal = 1.0;
+float currentSoundWidth = 112.0;
+
+// total view
+int maxX = 320;
+int maxY = 568;
+
+//width and height of sound
+int gridWidth = 50;
+int gridHeight = 104;
+
+int ylayers = 20;
+int xlayers = 0;
+
+int padding;
+
+//highest and lowest ranges to move in view
+int highestXrange;
+int lowestXrange;
+
+int highestYrange;
+int lowestYrange;
+
+// line up in grid
+int exactlyYmin;
+int exactlyYmax;
+int exactlyX;
+
+int paddingMinX;
+int paddingMaxX;
+
+int paddingMinY;
+int paddingMaxY;
+
+// last position for block 1
+int lastPositionX;
+int lastPositionY;
+
 Box soundBox[BOXROWS][BOXCOLUMNS];
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    done = YES;
-    self.LoopingLabel.text = [NSString stringWithFormat:@"File: %@",soundLooping];
+-(BOOL) shouldAutorotate { return NO; }
+
+-(void) viewDidLoad{
     
-    currentRow = 0;
-    currentCol = 0;
+    [super viewDidLoad];
+    CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI_2);
+    self.slider.transform = trans;
+    [self.slider setFrame:CGRectMake(50, 50, 30, 120)];
+    
+    highestXrange = maxX - (gridWidth/2);
+    lowestXrange = xlayers + (gridWidth/2);
+    
+    highestYrange = maxY - ylayers - (gridHeight/2);
+    lowestYrange = ylayers + (gridHeight/2);
+    
+    // line up in grid
+    exactlyYmin = lowestYrange;
+    exactlyYmax = highestYrange;
+    exactlyX = (maxX - xlayers)/2;
+    
+    // last position for block 1
+    lastPositionX = 100;//(maxX - xlayers)/4;
+    lastPositionY = 100;//maxY / 2;
+    
+    padding = gridWidth / 2;
+    
+    paddingMinX = exactlyX - padding;
+    paddingMaxX = exactlyX + padding;
+
+    paddingMinY = lowestYrange - padding;
+    paddingMaxY = highestYrange + padding;
+    
+    
+}
+   //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
+    //NSLog(@"%d",[self.loopVC interfaceOrientation]);
+    //done = YES;
+    //self.LoopingLabel.text = [NSString stringWithFormat:@"File: %@",soundLooping];
+    
+    //currentRow = 0;
+    //currentCol = 0;
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
     
     /*
@@ -58,6 +133,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     [recorder setDelegate:self];
     [recorder prepareToRecord];
     */
+    /*
     NSError *error;
     
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:urlLooping error:&error];
@@ -97,9 +173,148 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
         audioPlayer.delegate = self;
         [audioPlayer prepareToPlay];
     }
+     */
+
+//}
+/*
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    printf("touch begin ------- \n");
+    BoxToMove.layer.borderColor = [UIColor yellowColor].CGColor;
+    BoxToMove.layer.borderWidth = 3.0f;
+}
+
+-(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    printf("touch moved ------- ");
+    UITouch *myTouch = [touches anyObject];
+    
+    startPoint = [myTouch locationInView:self.view];
+    
+    BoxToMove.center = CGPointMake(startPoint.x, startPoint.y);
+    
+    printf("startPointX: %0.2f    startPointY: %0.2f\n",startPoint.x,startPoint.y);
+    
+}
+
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    printf("touch ends ------- \n");
+
+    if(startPoint.x > lowestX && startPoint.x < highestX && startPoint.y > lowestY && startPoint.y < highestY){
+        printf("in Box\n");
+        BoxToMove.center = CGPointMake(startPoint.x, exactlyY);
+        lastPositionX = startPoint.x;
+        lastPositionY = exactlyY;
+    }else{
+        printf("Not in box\n");
+        BoxToMove.center = CGPointMake(lastPositionX,lastPositionY);
+    }
+    BoxToMove.layer.borderWidth = 0.0f;
+}
+ */
+
+/*
+- (IBAction)pinchBox1:(UIPinchGestureRecognizer*)sender {
+    
+    CGAffineTransform zoomTransform = CGAffineTransformMakeScale([sender scale],[sender scale]);
+    
+    [[sender view] setTransform:zoomTransform];
+}
+*/
+
+- (IBAction)sliderValueChanged:(id)sender {
+    
+    if(slider.value == 1)
+        currentSoundWidth = 112;
+    else
+        currentSoundWidth = gridWidth * slider.value;
+    
+    self.BoxToMove.frame = CGRectMake(0.0, 50.0, currentSoundWidth, 50.0);
+}
+
+- (IBAction)moveBox1:(UILongPressGestureRecognizer*)sender {
+    
+    startPoint = [sender locationInView:self.view];
+    
+    BoxToMove.center = CGPointMake(startPoint.x, startPoint.y);
+
+    int pointX = 0;
+    int pointY = 0;
+
+    //done
+    if(recognizer.state == 1){
+        BoxToMove.layer.borderColor = [UIColor yellowColor].CGColor;
+        BoxToMove.layer.borderWidth = 3.0f;
+    }
+    else if(recognizer.state == 3){
+        
+        if(startPoint.x > paddingMinX && startPoint.x < paddingMaxX && startPoint.y > paddingMinY && startPoint.y < paddingMaxY){
+            
+            printf("in Box\n");
+            
+            if(startPoint.y < exactlyYmin){
+                BoxToMove.center = CGPointMake(exactlyX, exactlyYmin);
+                lastPositionY = exactlyYmin;
+            }
+            else if(startPoint.y > exactlyYmax){
+                BoxToMove.center = CGPointMake(exactlyX, exactlyYmax);
+                lastPositionY = exactlyYmax;
+            }
+            else{
+                BoxToMove.center = CGPointMake(exactlyX, startPoint.y);
+                lastPositionY = startPoint.y;
+            }
+            lastPositionX = exactlyX;
+            
+        }else{
+            
+            printf("Not in box ");
+
+            pointX = startPoint.x;
+            pointY = startPoint.y;
+            
+            if(pointX > highestXrange){
+                pointX = highestXrange;
+                printf("highest ");
+            }
+            else if(pointX < lowestXrange){
+                pointX = lowestXrange;
+                printf("lowest ");
+            }
+            else if(pointX > (exactlyX - (gridWidth/2)) && pointX < paddingMinX){
+                printf("middle ");
+                pointX = paddingMaxX - gridWidth;
+            }
+            else
+                pointX = startPoint.x;
+            
+            if(pointY > highestYrange)
+                pointY = highestYrange;
+            if(pointY < lowestYrange)
+                pointY = lowestYrange;
+            else
+                pointY = startPoint.y;
+            
+            BoxToMove.center = CGPointMake(pointX,pointY);
+        }
+        printf("so place in X: %0.2d    Y: %0.2d\n",pointX, pointY);
+        BoxToMove.layer.borderWidth = 0.0f;
+    }
+    printf("state: %d   ",recognizer.state);
+
+    printf("startPointX: %0.2f    startPointY: %0.2f\n",startPoint.x,startPoint.y);
 
 }
 
+/*
+- (IBAction)moveBox2:(UILongPressGestureRecognizer *)sender {
+    
+    startPoint = [sender locationInView:self.view];
+    
+    BoxToMove2.center = CGPointMake(startPoint.x, startPoint.y);
+}
+ */
+
+/*
 - (IBAction)playRecorded:(UIButton *)sender {
     
     NSLog(@"playing url : %@",temporaryRecFile);
@@ -144,10 +359,11 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     }
     
 }
+ */
+/*
 - (IBAction)newPlay:(id)sender {
     [self play];
 }
-
 - (void) play{
     
     [audioPlayer prepareToPlay];
@@ -228,6 +444,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
         [self play];
     }
 }
+ */
 /*
 - (IBAction)JustPlay:(UILongPressGestureRecognizer *)sender {
     
@@ -306,6 +523,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     }
 }
 */
+/*
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     printf("audio player finished playing current %d %d\n",currentRow,currentCol);
@@ -313,7 +531,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     done = YES;
     
 }
-
+*/
 /*
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *) aRecorder successfully:(BOOL)flag
 {

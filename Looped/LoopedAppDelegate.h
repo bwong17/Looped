@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoopedAppDelegate : UIResponder <UIApplicationDelegate>
+@interface LoopedAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> //{
+    
+    //BOOL flagOrientationToPortrait;
+//}
 
 @property (strong, nonatomic) UIWindow *window;
+
+//@property (assign) BOOL flagOrientationToPortrait;
 
 @end

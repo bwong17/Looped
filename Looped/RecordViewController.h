@@ -18,11 +18,20 @@ typedef struct{
 
 @interface RecordViewController : UIViewController <AVAudioPlayerDelegate, UIGestureRecognizerDelegate,AVAudioRecorderDelegate>
 
+@property CGPoint startPoint;
+@property (weak, nonatomic) IBOutlet UIView *BoxToMove;
+@property (nonatomic, retain) IBOutlet UIView *landscapeView;
+
+
+@property (strong, nonatomic) UIViewController *loopVC;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayBackPlayer;
-@property (weak, nonatomic) IBOutlet UILabel *LoopingLabel;
 @property (strong, nonatomic) AVAudioRecorder *recorder;
 @property (nonatomic, strong) NSTimer* timer;
-//@property (nonatomic, strong) Box *soundBox;
+
+@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *recognizer;
+
 @end
 

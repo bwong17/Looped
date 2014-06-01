@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "Variables.h"
 #import "Parse/Parse.h"
+#import "AssetsLibrary/AssetsLibrary.h"
 
 @implementation ProfileViewController
 @synthesize firstNameLabel;
@@ -21,6 +22,9 @@
 @synthesize statusIndicator;
 @synthesize emailVerified;
 @synthesize bar;
+@synthesize facebookLogo;
+
+-(BOOL) shouldAutorotate { return NO; }
 
 - (void)viewDidLoad
 {
@@ -64,13 +68,46 @@
                 [self.emailVerified setTextColor:[UIColor redColor]];
             }
             
-            if([gender isEqualToString:@"Female"]){
-                self.profileImage.image = [UIImage imageNamed:@"woman.png"];
-            }else if ([gender isEqualToString:@"Male"]){
-                self.profileImage.image = [UIImage imageNamed:@"man.png"];
+            if(loggedUser[@"profilePic"] == NULL){
+                if([gender isEqualToString:@"Female"]){
+                    self.profileImage.image = [UIImage imageNamed:@"woman.png"];
+                }else if ([gender isEqualToString:@"Male"]){
+                    self.profileImage.image = [UIImage imageNamed:@"man.png"];
+                }else{
+                    self.profileImage.image = [UIImage imageNamed:@"camera.png"];
+                }
             }else{
-                self.profileImage.image = [UIImage imageNamed:@"camera.png"];
+                ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+                {
+                    ALAssetRepresentation *rep = [myasset defaultRepresentation];
+                    @autoreleasepool {
+                        CGImageRef iref = [rep fullScreenImage];
+                        if (iref) {
+                            UIImage *temp = [UIImage imageWithCGImage:iref];
+                            self.profileImage.image = temp;
+                            iref = nil;
+                        }
+                    }
+                };
+                
+                ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+                {
+                    NSLog(@"Can't get image - %@",[myerror localizedDescription]);
+                };
+                
+                NSURL *url = [NSURL URLWithString:loggedUser[@"profilePic"]];
+                
+                ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+                [assetslibrary assetForURL:url
+                               resultBlock:resultblock
+                              failureBlock:failureblock];
+                
+                if (![PFFacebookUtils isLinkedWithUser:currentUser])
+                    [facebookLogo setImage:[UIImage imageNamed: @"facebook.png"]];
+                else
+                    [facebookLogo setImage:[UIImage imageNamed: @"facebook_blue.png"]];
             }
+            
             self.statusIndicator.hidden = YES;
             [statusIndicator stopAnimating];
     }];

@@ -15,3 +15,4 @@ NSString *soundLooping;
 NSURL *urlLooping;
 BOOL backFromSounds;
 NSString *verified;
+UIImage *profileImageFinal;
