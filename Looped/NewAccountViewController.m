@@ -61,7 +61,8 @@
 
 - (IBAction)createdAccount:(id)sender {
     
-    PFUser *user = [PFUser user];
+    PFUser *user = [PFUser currentUser];
+    
     user.username = self.userName.text;
     user.password = self.password.text;
     
@@ -77,10 +78,11 @@
         }else{
             NSLog(@"Added %@",user.username);
             NSString *welcomeMessage = [NSString stringWithFormat: @"%@ %@ %@",@"Welcome",self.firstName.text, self.lastName.text];
-            
-            [self performSegueWithIdentifier:@"createAccount" sender:self];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:welcomeMessage message:@"Your Looped profile has been created" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            [alert show];
+     
+        [self performSegueWithIdentifier:@"createAccount" sender:self];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:welcomeMessage message:@"Your Looped profile has been created" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alert show];
+     
         }
     }];
 }

@@ -10,6 +10,7 @@
 #import "NewsfeedViewController.h"
 #import "Variables.h"
 #import "Parse/Parse.h"
+#import "FacebookSDK/FacebookSDK.h"
 
 
 @implementation LoginViewController
@@ -24,7 +25,10 @@
     [self.userName setDelegate:self];
     [self.password setDelegate:self];
     self.statusIndicator.hidden = YES;
+    
+    
     PFUser *currentUser = [PFUser currentUser];
+    
     if(currentUser){
         self.userName.text = currentUser.username;
         self.createAccountButton.enabled = NO;
@@ -62,7 +66,25 @@
 }
 
 - (IBAction)creatingAccount:(id)sender {
+    
     [self performSegueWithIdentifier:@"creatingAccount" sender:self];
+    /*
+    NSArray *permissions;//= [[NSArray alloc] arrayByAddingObject:@"public_actions"];
+    
+    [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
+        NSLog(@"User:%@",user);
+        
+        if (!user) {
+        //    NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+        //    NSLog(@"User signed up and logged in through Facebook!");
+            [self performSegueWithIdentifier:@"creatingAccount" sender:self];
+        } else {
+           //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Facebook Account already used." delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles: nil];
+            //[alert show];
+        }
+    }];
+     */
 }
 
 -(IBAction)LogIn:(id)sender

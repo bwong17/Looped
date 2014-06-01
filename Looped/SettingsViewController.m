@@ -18,6 +18,8 @@
 
 @synthesize connectFacebookButton;
 @synthesize loading;
+@synthesize editPermissionsButton;
+@synthesize facebookLogo2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,10 +39,19 @@
     
     PFUser *user = [PFUser currentUser];
     
-    if (![PFFacebookUtils isLinkedWithUser:user])
-        [connectFacebookButton setTitle:@"Connect To Facebook" forState:normal];
-    else
-        [connectFacebookButton setTitle:@"Disconnect From Facebook" forState:normal];
+    if (![PFFacebookUtils isLinkedWithUser:user]){
+        [connectFacebookButton setTitle:@"Connect" forState:normal];
+        [editPermissionsButton setEnabled:NO];
+        [facebookLogo2 setBackgroundColor:[UIColor grayColor]];
+        [editPermissionsButton setBackgroundColor:[UIColor grayColor]];
+    }
+    else{
+        [connectFacebookButton setTitle:@"Disconnect" forState:normal];
+        [editPermissionsButton setEnabled:YES];
+        [facebookLogo2 setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(122.0/255.0) blue:(255.0/255.0) alpha:1.0]];
+        [editPermissionsButton setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(122.0/255.0) blue:(255.0/255.0) alpha:1.0]];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,14 +79,17 @@
 -(IBAction) ConnectToFacebook: (id) sender{
     
     PFUser *user = [PFUser currentUser];
+    NSArray *permissions = @[@"public_profile",@"publish_actions"];
     
     if (![PFFacebookUtils isLinkedWithUser:user]) {
-        [PFFacebookUtils linkUser:user permissions:nil block:^(BOOL succeeded, NSError *error) {
+        [PFFacebookUtils linkUser:user permissions:permissions block:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Succesfully Connected To Facebook" message:@"Woohoo, user logged in with Facebook!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
                 
                 [alert show];
-                [connectFacebookButton setTitle:@"Disconnect From Facebook" forState:normal];
+                [connectFacebookButton setTitle:@"Disconnect" forState:normal];
+                [editPermissionsButton setEnabled:YES];
+                [facebookLogo2 setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(122.0/255.0) blue:(255.0/255.0) alpha:1.0]];               [editPermissionsButton setBackgroundColor:[UIColor colorWithRed:(0.0/255.0) green:(122.0/255.0) blue:(255.0/255.0) alpha:1.0]];
             }
         }];
         
@@ -88,63 +102,29 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Disconnected From Facebook" message:@"The user is no longer associated with their Facebook account." delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
                 
                 [alert show];
-                [connectFacebookButton setTitle:@"Connect To Facebook" forState:normal];
+                [connectFacebookButton setTitle:@"Connect" forState:normal];
+                [editPermissionsButton setEnabled:NO];
+                [facebookLogo2 setBackgroundColor:[UIColor grayColor]];
+                [editPermissionsButton setBackgroundColor:[UIColor grayColor]];
+
             }
             self.loading.hidden = YES;
             [loading stopAnimating];
-            
 
         }];
     }
 }
 - (IBAction)test:(id)sender {
-    /*
-    NSArray *permissionsNeeded = @[@"basic_info", @"user_birthday"];
     
-    // Request the permissions the user currently has
-    [FBRequestConnection startWithGraphPath:@"/me/permissions"
-     completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        if (!error){
-                                  // These are the current permissions the user has:
-                                  NSDictionary *currentPermissions= [(NSArray *)[result data] objectAtIndex:0];
-                                  
-                                  // We will store here the missing permissions that we will have to request
-                                  NSMutableArray *requestPermissions = [[NSMutableArray alloc] initWithArray:@[]];
-                                  
-                                  // Check if all the permissions we need are present in the user's current permissions
-                                  // If they are not present add them to the permissions to be requested
-                                  for (NSString *permission in permissionsNeeded){
-                                      if (![currentPermissions objectForKey:permission]){
-                                          [requestPermissions addObject:permission];
-                                      }
-                                  }
-                                  
-                                  // If we have permissions to request
-                                  if ([requestPermissions count] > 0){
-                                      // Ask for the missing permissions
-                                      [FBSession.activeSession
-                                       requestNewReadPermissions:requestPermissions
-                                       completionHandler:^(FBSession *session, NSError *error) {
-                                           if (!error) {
-                                               // Permission granted
-                                               NSLog(@"new permissions %@", [FBSession.activeSession permissions]);
-                                               // We can request the user information
-                                               [self makeRequestForUserData];
-                                           } else {
-                                               // An error occurred, we need to handle the error
-                                        }
-                                       }];
-                                  } else {
-                                      // Permissions are present
-                                      // We can request the user information
-                                      [self makeRequestForUserData];
-                                  }
-                                  
-                              } else {
-                                  // An error occurred, we need to handle the error
-                              }
-                          }];}
-*/
+    NSArray *permissionsNeeded = @[@"email",@"user_birthday"];
+    
+    [PFFacebookUtils reauthorizeUser:[PFUser currentUser] withPublishPermissions:permissionsNeeded audience:FBSessionDefaultAudienceFriends
+            block:^(BOOL succeeded, NSError *error) {
+        
+                if (succeeded) {
+                    
+                }
+    }];
 }
 
 @end

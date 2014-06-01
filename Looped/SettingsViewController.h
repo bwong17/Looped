@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *connectFacebookButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
+@property (weak, nonatomic) IBOutlet UIButton *editPermissionsButton;
+@property (weak, nonatomic) IBOutlet UIImageView *facebookLogo2;
 @end
