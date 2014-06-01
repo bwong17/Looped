@@ -334,15 +334,15 @@
 		625EADDA1909EE6400B37E3C /* veil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC01909EE6400B37E3C /* veil.mp3 */; };
 		625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC11909EE6400B37E3C /* wipe.mp3 */; };
 		625EADDC1909EE6400B37E3C /* zig-zag.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 625EADC21909EE6400B37E3C /* zig-zag.mp3 */; };
+		62C88958193BE13500C0789C /* Looped Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C88957193BE13500C0789C /* Looped Icon.png */; };
+		62C8895A193BE13F00C0789C /* Looped Logo tab icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C88959193BE13F00C0789C /* Looped Logo tab icon 2.png */; };
+		62C8895C193BE17600C0789C /* button-playRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C8895B193BE17600C0789C /* button-playRed.png */; };
+		62C8895E193BE18B00C0789C /* button-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C8895D193BE18B00C0789C /* button-play.png */; };
 		E057C8D9193BA90200F5B5FF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E057C766193BA8EE00F5B5FF /* FacebookSDK.framework */; };
 		E057C8DB193BB88200F5B5FF /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = E057C8DA193BB88200F5B5FF /* facebook_blue.png */; };
 		E0620504190DF34B00FD633B /* Looped_Base_Color.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620501190DF34B00FD633B /* Looped_Base_Color.png */; };
 		E0620505190DF34B00FD633B /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620502190DF34B00FD633B /* Looped Login Image.png */; };
 		E0620506190DF34B00FD633B /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620503190DF34B00FD633B /* Looped Text.png */; };
-		E0620508190DF9CF00FD633B /* Looped Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620507190DF9CF00FD633B /* Looped Icon.png */; };
-		E0620512190DFB7300FD633B /* Looped Logo tab icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */; };
-		E0620518190E07C800FD633B /* button-play.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620516190E07C800FD633B /* button-play.png */; };
-		E062051A190E090600FD633B /* button-playRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620519190E090600FD633B /* button-playRed.png */; };
 		E062051D190E111E00FD633B /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E062051C190E111E00FD633B /* RecordViewController.m */; };
 		E08F99731925BA140099E93D /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08F99721925BA140099E93D /* NavigationViewController.m */; };
 		E0919A571904B34700D1D50D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919A561904B34700D1D50D /* Foundation.framework */; };
@@ -378,7 +378,6 @@
 		E0919D1B1907A74C00D1D50D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919D1A1907A74C00D1D50D /* AVFoundation.framework */; };
 		E0919F821909EAF100D1D50D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0919F811909EAF100D1D50D /* Parse.framework */; };
 		E0DA3D3B193851DB00499914 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DA3D3A193851DB00499914 /* AssetsLibrary.framework */; };
-		E0DA3D3D193869E300499914 /* backgroundGray.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E0DA3D3C193869E300499914 /* backgroundGray.jpeg */; };
 		E0DA87871921750200BB7BFB /* ResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DA87861921750200BB7BFB /* ResetViewController.m */; };
 		E0DA878A1921BB7A00BB7BFB /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DA87891921BB7A00BB7BFB /* EditProfileViewController.m */; };
 		E0F94A02190F8346001B5B22 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F94A01190F8346001B5B22 /* SettingsViewController.m */; };
@@ -800,6 +799,10 @@
 		625EADC01909EE6400B37E3C /* veil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = veil.mp3; sourceTree = "<group>"; };
 		625EADC11909EE6400B37E3C /* wipe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wipe.mp3; sourceTree = "<group>"; };
 		625EADC21909EE6400B37E3C /* zig-zag.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "zig-zag.mp3"; sourceTree = "<group>"; };
+		62C88957193BE13500C0789C /* Looped Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Icon.png"; sourceTree = "<group>"; };
+		62C88959193BE13F00C0789C /* Looped Logo tab icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Logo tab icon 2.png"; sourceTree = "<group>"; };
+		62C8895B193BE17600C0789C /* button-playRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-playRed.png"; sourceTree = "<group>"; };
+		62C8895D193BE18B00C0789C /* button-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-play.png"; sourceTree = "<group>"; };
 		E057C766193BA8EE00F5B5FF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		E057C768193BA8EE00F5B5FF /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		E057C769193BA8EE00F5B5FF /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -1065,10 +1068,6 @@
 		E0620501190DF34B00FD633B /* Looped_Base_Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Looped_Base_Color.png; sourceTree = SOURCE_ROOT; };
 		E0620502190DF34B00FD633B /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Login Image.png"; sourceTree = SOURCE_ROOT; };
 		E0620503190DF34B00FD633B /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Text.png"; sourceTree = SOURCE_ROOT; };
-		E0620507190DF9CF00FD633B /* Looped Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Icon.png"; path = "../../Desktop/Looped/Looped Graphics/Looped Icon.png"; sourceTree = "<group>"; };
-		E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Looped Logo tab icon 2.png"; path = "../../Desktop/Looped/Looped Graphics/Looped Logo tab icon 2.png"; sourceTree = "<group>"; };
-		E0620516190E07C800FD633B /* button-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-play.png"; path = "../../../Desktop/Looped/iconbeast-lite copy/iconbeast lite - png/button-play.png"; sourceTree = "<group>"; };
-		E0620519190E090600FD633B /* button-playRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-playRed.png"; path = "../../../Desktop/Looped/iconbeast-lite copy/iconbeast lite - png/button-playRed.png"; sourceTree = "<group>"; };
 		E062051B190E111E00FD633B /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		E062051C190E111E00FD633B /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		E08F99711925BA140099E93D /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
@@ -1118,7 +1117,6 @@
 		E0919D1A1907A74C00D1D50D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E0919F811909EAF100D1D50D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E0DA3D3A193851DB00499914 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		E0DA3D3C193869E300499914 /* backgroundGray.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundGray.jpeg; path = ../../Desktop/backgroundGray.jpeg; sourceTree = "<group>"; };
 		E0DA87851921750200BB7BFB /* ResetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetViewController.h; path = ../ResetViewController.h; sourceTree = "<group>"; };
 		E0DA87861921750200BB7BFB /* ResetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetViewController.m; path = ../ResetViewController.m; sourceTree = "<group>"; };
 		E0DA87881921BB7A00BB7BFB /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditProfileViewController.h; path = ../EditProfileViewController.h; sourceTree = "<group>"; };
@@ -1369,12 +1367,13 @@
 				625EAC0A1909ECFC00B37E3C /* pet-dog.png */,
 				625EAC0B1909ECFC00B37E3C /* phone-book.png */,
 				625EAC0C1909ECFC00B37E3C /* phone.png */,
+				62C8895D193BE18B00C0789C /* button-play.png */,
 				625EAC0D1909ECFC00B37E3C /* photo.png */,
 				625EAC0E1909ECFC00B37E3C /* picnic.png */,
 				625EAC0F1909ECFC00B37E3C /* pie-chart.png */,
 				625EAC101909ECFC00B37E3C /* pine-tree.png */,
+				62C8895B193BE17600C0789C /* button-playRed.png */,
 				625EAC111909ECFC00B37E3C /* pipe.png */,
-				E0620519190E090600FD633B /* button-playRed.png */,
 				625EAC121909ECFC00B37E3C /* pizza.png */,
 				625EAC131909ECFC00B37E3C /* plier.png */,
 				625EAC141909ECFC00B37E3C /* plus-sign.png */,
@@ -1464,7 +1463,6 @@
 				625EAC681909ECFC00B37E3C /* uptrend.png */,
 				625EAC691909ECFC00B37E3C /* vector.png */,
 				625EAC6A1909ECFC00B37E3C /* wallet.png */,
-				E0620516190E07C800FD633B /* button-play.png */,
 				625EAC6B1909ECFC00B37E3C /* water hose.png */,
 				625EAC6C1909ECFC00B37E3C /* water-bottle.png */,
 				625EAC6D1909ECFC00B37E3C /* water.png */,
@@ -2164,10 +2162,9 @@
 		E0919A5D1904B34700D1D50D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E0DA3D3C193869E300499914 /* backgroundGray.jpeg */,
+				62C88957193BE13500C0789C /* Looped Icon.png */,
+				62C88959193BE13F00C0789C /* Looped Logo tab icon 2.png */,
 				E0620501190DF34B00FD633B /* Looped_Base_Color.png */,
-				E0620511190DFB7300FD633B /* Looped Logo tab icon 2.png */,
-				E0620507190DF9CF00FD633B /* Looped Icon.png */,
 				E0620502190DF34B00FD633B /* Looped Login Image.png */,
 				E0620503190DF34B00FD633B /* Looped Text.png */,
 				625EADA81909EE6400B37E3C /* Sounds */,
@@ -2509,10 +2506,10 @@
 				625EACC61909ECFD00B37E3C /* cloud.png in Resources */,
 				625EACDF1909ECFD00B37E3C /* dumbbell.png in Resources */,
 				625EAD3A1909ECFD00B37E3C /* photo.png in Resources */,
+				62C8895E193BE18B00C0789C /* button-play.png in Resources */,
 				625EAD981909ECFD00B37E3C /* water hose.png in Resources */,
 				625EAD631909ECFD00B37E3C /* shield-round.png in Resources */,
 				625EAD231909ECFD00B37E3C /* mountain.png in Resources */,
-				E0620508190DF9CF00FD633B /* Looped Icon.png in Resources */,
 				625EACEB1909ECFD00B37E3C /* film-clap-board.png in Resources */,
 				625EAD3B1909ECFD00B37E3C /* picnic.png in Resources */,
 				625EAD8C1909ECFD00B37E3C /* tick.png in Resources */,
@@ -2634,7 +2631,6 @@
 				625EAD841909ECFD00B37E3C /* tennis.png in Resources */,
 				625EACC11909ECFD00B37E3C /* chess-castle.png in Resources */,
 				625EAD6F1909ECFD00B37E3C /* sofa.png in Resources */,
-				E0DA3D3D193869E300499914 /* backgroundGray.jpeg in Resources */,
 				625EAD691909ECFD00B37E3C /* smiley-beast.png in Resources */,
 				625EADA01909ECFD00B37E3C /* wind.png in Resources */,
 				625EAD731909ECFD00B37E3C /* speaker-on.png in Resources */,
@@ -2721,7 +2717,6 @@
 				625EADCF1909EE6400B37E3C /* piston-2.mp3 in Resources */,
 				625EAD911909ECFD00B37E3C /* tree.png in Resources */,
 				625EACC71909ECFD00B37E3C /* coding.png in Resources */,
-				E0620512190DFB7300FD633B /* Looped Logo tab icon 2.png in Resources */,
 				625EADDB1909EE6400B37E3C /* wipe.mp3 in Resources */,
 				625EACFA1909ECFD00B37E3C /* graduation-cap.png in Resources */,
 				625EAC881909ECFC00B37E3C /* arrow-big-08.png in Resources */,
@@ -2740,6 +2735,7 @@
 				625EACF11909ECFD00B37E3C /* flower.png in Resources */,
 				625EAD371909ECFD00B37E3C /* pet-dog.png in Resources */,
 				625EAD771909ECFD00B37E3C /* stethoscope.png in Resources */,
+				62C8895C193BE17600C0789C /* button-playRed.png in Resources */,
 				625EADA21909ECFD00B37E3C /* window-app.png in Resources */,
 				625EAD7B1909ECFD00B37E3C /* supplement.png in Resources */,
 				625EAD471909ECFD00B37E3C /* presentation.png in Resources */,
@@ -2754,9 +2750,7 @@
 				625EADD11909EE6400B37E3C /* prism-1.mp3 in Resources */,
 				625EACB31909ECFD00B37E3C /* button-stop.png in Resources */,
 				625EAD831909ECFD00B37E3C /* tea.png in Resources */,
-				E062051A190E090600FD633B /* button-playRed.png in Resources */,
 				625EACF41909ECFD00B37E3C /* fork-knife.png in Resources */,
-				E0620518190E07C800FD633B /* button-play.png in Resources */,
 				625EAC8F1909ECFC00B37E3C /* arrow-small-11.png in Resources */,
 				625EAC991909ECFC00B37E3C /* backpack.png in Resources */,
 				625EAD4F1909ECFD00B37E3C /* radioactive.png in Resources */,
@@ -2767,6 +2761,7 @@
 				625EAD551909ECFD00B37E3C /* route-sign.png in Resources */,
 				625EAD261909ECFD00B37E3C /* mushroom.png in Resources */,
 				625EACFF1909ECFD00B37E3C /* hand.png in Resources */,
+				62C88958193BE13500C0789C /* Looped Icon.png in Resources */,
 				625EAD201909ECFD00B37E3C /* minus-sign.png in Resources */,
 				625EACFB1909ECFD00B37E3C /* grape.png in Resources */,
 				625EAD1F1909ECFD00B37E3C /* microphone.png in Resources */,
@@ -2779,6 +2774,7 @@
 				625EADA11909ECFD00B37E3C /* windmill.png in Resources */,
 				625EAD4A1909ECFD00B37E3C /* push-pin.png in Resources */,
 				625EAC9B1909ECFC00B37E3C /* bar-chart.png in Resources */,
+				62C8895A193BE13F00C0789C /* Looped Logo tab icon 2.png in Resources */,
 				625EACAD1909ECFD00B37E3C /* button-next.png in Resources */,
 				625EACC31909ECFD00B37E3C /* chocolate.png in Resources */,
 				625EAD351909ECFD00B37E3C /* pen.png in Resources */,
@@ -3174,8 +3170,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/barbarawong/Downloads,
@@ -3196,8 +3192,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: barbara Wong (ZS9L62ZF95)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/barbarawong/Downloads,
