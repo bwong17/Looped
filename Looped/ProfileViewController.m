@@ -13,8 +13,7 @@
 #import "AssetsLibrary/AssetsLibrary.h"
 
 @implementation ProfileViewController
-@synthesize firstNameLabel;
-@synthesize lastNameLabel;
+@synthesize NameLabel;
 @synthesize profileImage;
 @synthesize birthdayDay;
 @synthesize birthdayMonth;
@@ -54,8 +53,7 @@
             NSString *year = loggedUser[@"birthYear"];
             NSString *email = loggedUser[@"email"];
             
-            self.firstNameLabel.text = firstName;
-            self.lastNameLabel.text = lastName;
+            self.NameLabel.text = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
             self.birthdayMonth.text = month;
             self.birthdayDay.text = day;
             self.birthdayYear.text = year;

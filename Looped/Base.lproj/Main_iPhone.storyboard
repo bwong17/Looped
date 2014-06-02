@@ -372,13 +372,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBE-QT-tay">
-                                <rect key="frame" x="155" y="79" width="59" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA2-sK-9Is">
-                                <rect key="frame" x="222" y="79" width="90" height="25"/>
+                                <rect key="frame" x="150" y="79" width="150" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                                 <nil key="highlightedColor"/>
@@ -485,6 +479,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="NameLabel" destination="xBE-QT-tay" id="kY7-z7-Cef"/>
                         <outlet property="bar" destination="WUA-Xl-6l3" id="eVO-rr-AK5"/>
                         <outlet property="birthdayDay" destination="2Ls-4O-ciC" id="KQv-CJ-PWc"/>
                         <outlet property="birthdayMonth" destination="FdW-Sf-iVq" id="3GS-oh-i3p"/>
@@ -492,8 +487,6 @@
                         <outlet property="emailField" destination="1qj-PQ-Pe5" id="LaI-Lq-0Gm"/>
                         <outlet property="emailVerified" destination="JVe-10-NNe" id="VET-LL-wjL"/>
                         <outlet property="facebookLogo" destination="MqR-mT-dfd" id="DsP-1I-nFK"/>
-                        <outlet property="firstNameLabel" destination="xBE-QT-tay" id="W6E-0j-SrO"/>
-                        <outlet property="lastNameLabel" destination="lA2-sK-9Is" id="VE4-xs-fZX"/>
                         <outlet property="profileImage" destination="DeC-MY-0rI" id="MUt-z0-uvW"/>
                         <outlet property="statusIndicator" destination="QsP-iA-mEu" id="O39-Oa-KgS"/>
                         <segue destination="5gY-kL-OrU" kind="push" identifier="editProfile" id="4iL-b7-jby"/>

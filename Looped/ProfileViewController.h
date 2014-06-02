@@ -10,8 +10,7 @@
 
 @interface ProfileViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *NameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *birthdayMonth;
 @property (weak, nonatomic) IBOutlet UILabel *birthdayDay;
 @property (weak, nonatomic) IBOutlet UILabel *birthdayYear;
