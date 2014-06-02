@@ -1375,7 +1375,7 @@
 				ORGANIZATIONNAME = "Barbara Wong";
 				TargetAttributes = {
 					E0919A521904B34600D1D50D = {
-						DevelopmentTeam = E6U5UKEFL5;
+						DevelopmentTeam = C5D5LEK9E8;
 					};
 					E0919A791904B34A00D1D50D = {
 						TestTargetID = E0919A521904B34600D1D50D;
