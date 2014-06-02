@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "Variables.h"
 #import "Parse/Parse.h"
+#import <QuartzCore/QuartzCore.h>
 #import "AssetsLibrary/AssetsLibrary.h"
 
 @implementation ProfileViewController
@@ -39,6 +40,8 @@
     
     self.bar.title = label;
     
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
+    self.profileImage.clipsToBounds = YES;
     PFQuery *query = [PFQuery queryWithClassName:@"_User"];
         [query getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *loggedUser, NSError *error) {
             
@@ -67,6 +70,7 @@
                 self.emailVerified.text = @"Not Verified";
                 [self.emailVerified setTextColor:[UIColor redColor]];
             }
+
             
             if(loggedUser[@"profilePic"] == NULL){
                 if([gender isEqualToString:@"Female"]){
@@ -107,7 +111,6 @@
                 else
                     [facebookLogo setImage:[UIImage imageNamed: @"facebook_blue.png"]];
             }
-            
             self.statusIndicator.hidden = YES;
             [statusIndicator stopAnimating];
     }];
@@ -122,6 +125,15 @@
 - (IBAction)editProfileButton:(id)sender {
     
     [self performSegueWithIdentifier:@"editProfile" sender:self];
+}
+
+-(void)setRoundedView:(UIImageView *)roundedView toDiameter:(float)newSize;
+{
+    CGPoint saveCenter = roundedView.center;
+    CGRect newFrame = CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
+    roundedView.frame = newFrame;
+    roundedView.layer.cornerRadius = newSize / 2.0;
+    roundedView.center = saveCenter;
 }
 
 @end
