@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8-Bit</key>
+	<array>
+		<string>Bash</string>
+		<string>Binky</string>
+		<string>Boing</string>
+		<string>Brring</string>
+		<string>Cart00n</string>
+		<string>Coinz</string>
+		<string>Count</string>
+		<string>Dap</string>
+		<string>Durf</string>
+		<string>Eeow</string>
+		<string>Glass</string>
+		<string>Glitch</string>
+		<string>Grunt</string>
+		<string>Invader</string>
+		<string>Last</string>
+		<string>Match</string>
+		<string>Mmm Boop</string>
+		<string>N64</string>
+		<string>Sine wave</string>
+		<string>Surprise</string>
+		<string>Target</string>
+		<string>Walk</string>
+		<string>What&apos;s That</string>
+		<string>Wooomp</string>
+		<string>Yahoo!</string>
+		<string>Zoink</string>
+	</array>
+	<key>Everyday</key>
+	<array>
+		<string>Aquarium</string>
+		<string>Ashes</string>
+		<string>Bass</string>
+		<string>Burp</string>
+		<string>Child&apos;s Toy</string>
+		<string>Ching</string>
+		<string>Clippity Clap</string>
+		<string>Countdown</string>
+		<string>Crack</string>
+		<string>Cymbal2</string>
+		<string>Dapper</string>
+		<string>Evaporate</string>
+		<string>Flick</string>
+		<string>Laz3r</string>
+		<string>Light Cymbal</string>
+		<string>Light-Hearted</string>
+		<string>Muted Cymbal</string>
+		<string>Old School</string>
+		<string>Pat</string>
+		<string>Pshhh</string>
+		<string>Shhh</string>
+		<string>Squeegee</string>
+		<string>T-Rex</string>
+		<string>Thick</string>
+		<string>Underwater</string>
+		<string>Werp</string>
+	</array>
+	<key>Instruments</key>
+	<array>
+		<string>bb click</string>
+		<string>beep</string>
+		<string>bomp</string>
+		<string>bongo</string>
+		<string>break</string>
+		<string>chime</string>
+		<string>closh</string>
+		<string>deep drum</string>
+		<string>doof</string>
+		<string>dooosh</string>
+		<string>dop</string>
+		<string>fall</string>
+		<string>fidget</string>
+		<string>high note</string>
+		<string>kick</string>
+		<string>lil beep</string>
+		<string>navajo</string>
+		<string>piano key</string>
+		<string>roll</string>
+		<string>single</string>
+		<string>tada</string>
+		<string>tong</string>
+		<string>trill</string>
+		<string>waves</string>
+		<string>wooden woot</string>
+		<string>wop</string>
+	</array>
+	<key>Light</key>
+	<array>
+		<string>alienz</string>
+		<string>bop</string>
+		<string>bwoo</string>
+		<string>cymbal</string>
+		<string>doooosh</string>
+		<string>doop</string>
+		<string>drop sand</string>
+		<string>gush</string>
+		<string>hello</string>
+		<string>high hopes</string>
+		<string>little twinkle</string>
+		<string>louie</string>
+		<string>noire</string>
+		<string>oddball</string>
+		<string>orient</string>
+		<string>psh</string>
+		<string>quickie</string>
+		<string>rainstick</string>
+		<string>spidey</string>
+		<string>splat</string>
+		<string>static</string>
+		<string>swan</string>
+		<string>thrump</string>
+		<string>ting</string>
+		<string>toodaloo</string>
+		<string>wonder</string>
+	</array>
+	<key>Mouth</key>
+	<array>
+		<string>Ah</string>
+		<string>Bling</string>
+		<string>Bwuh!</string>
+		<string>Cheese</string>
+		<string>Ditto</string>
+		<string>Flop</string>
+		<string>Gasp</string>
+		<string>Heap</string>
+		<string>Interference</string>
+		<string>MmMmMm</string>
+		<string>Ohm</string>
+		<string>Oops 2</string>
+		<string>Oops</string>
+		<string>Pop</string>
+		<string>Psst</string>
+		<string>Sad Cat</string>
+		<string>Shleeap</string>
+		<string>Slurp</string>
+		<string>Slushy</string>
+		<string>TL DR</string>
+		<string>Tweak</string>
+		<string>UH</string>
+		<string>Unclog</string>
+		<string>Waaah</string>
+		<string>Wink</string>
+		<string>Yummy</string>
+	</array>
+	<key>Nautical</key>
+	<array>
+		<string>bake</string>
+		<string>clock</string>
+		<string>diiiing</string>
+		<string>doe</string>
+		<string>happy doe</string>
+		<string>lick</string>
+		<string>loading</string>
+		<string>ooh la la</string>
+		<string>pancake</string>
+		<string>rack</string>
+		<string>searching</string>
+		<string>shake</string>
+		<string>shikkity shake</string>
+		<string>submarine</string>
+		<string>suspension</string>
+		<string>thump</string>
+		<string>tick</string>
+		<string>timer</string>
+		<string>transmit</string>
+		<string>tss</string>
+		<string>ufo</string>
+		<string>weil</string>
+		<string>wack</string>
+		<string>wipe</string>
+		<string>wood</string>
+		<string>zig-zag</string>
+	</array>
+</dict>
+</plist>

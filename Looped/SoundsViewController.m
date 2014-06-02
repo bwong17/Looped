@@ -18,14 +18,10 @@
 @implementation SoundsViewController
 @synthesize SoundTableView;
 
-//NSArray *soundsArray;
-//NSString *string;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -39,45 +35,17 @@
     self.SoundTableView.dataSource = self;
     [super viewDidLoad];
     
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"Looped_Base_Color.png"]forBarMetrics:UIBarMetricsDefault];
-    /*
-    NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
-    shadow.shadowOffset = CGSizeMake(0, 1);
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,shadow, NSShadowAttributeName,[UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
-    */
-    //[[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], [UIFont fontWithName:@"System" size:21.0], nil]];
     
-    /*
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
-
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-     */
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"SoundList" ofType:@"plist"];
     
-    soundsArray = [[NSMutableArray alloc]init];
-    soundsArray = @[@"bubbles",@"clay",@"confetti",@"corona",@"dotted-spiral",@"flash-1",@"flash-2",@"flash-3",@"glimmer",@"moon",@"pinwheel",@"piston-1",@"piston-2",@"piston-3",@"prism-1",@"prism-2",@"prism-3",@"splits",@"squiggle",@"strike",@"suspension",@"timer",@"ufo",@"veil",@"wipe",@"zig-zag",];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     
-    // API CALL TO GET THE SOUND STRINGS
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"Sounds"];
-    //query.cachePolicy = kPFCachePolicyNetworkElseCache;
-    [query whereKey:@"soundsName" notEqualTo:@""];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *parseArray, NSError *error){
-        
-        //NSArray *tempArray = [query findObjects];
-        soundsArray = [[NSMutableArray alloc] initWithArray:parseArray];
-        NSLog(@"query %lu",(unsigned long)soundsArray.count);
-     
-        if (!error) {
-            for(PF  Object *object in parseArray)
-               [soundsArray addObject:object[@"soundName"]];
-        } else
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        NSLog(@"After loops count is %lu",(unsigned long)soundsArray.count);
-     
-        //NSLog(@"ScoreArray %@",tempArray);
-    }];
-*/
+    self.sounds = dict;
+    
+    NSArray *array = [[_sounds allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    self.keys = array;
+    
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
@@ -101,33 +69,54 @@
 
 -(NSInteger)numberOfSectionsInTableView :(UITableView *) tableView
 {
-    return 1;
+    return [_keys count];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return soundsArray.count;
+    
+    NSString *key = [_keys objectAtIndex:section];
+    
+    NSArray *sound = [_sounds objectForKey:key];
+    
+    return [sound count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TableCell";
-    SoundsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    int row = [indexPath row];
+    NSString *key = [_keys objectAtIndex:indexPath.section];
     
-    [cell.soundLabel setText:soundsArray[row]];
+    NSArray *sound = [_sounds objectForKey:key];
     
-    [cell.playButton setTitle:soundsArray[row]
-        forState:UIControlStateNormal];
-    [cell.playButton setTitle:soundsArray[row] forState:UIControlStateSelected];
+    static NSString *cellID = @"TableCell";
     
-    [cell.loopButton setTitle:soundsArray[row]
+    SoundsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    
+    if(cell == nil){
+        cell = [[SoundsTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    
+    cell.soundLabel.text = [sound objectAtIndex:indexPath.row];
+    
+    [cell.playButton setTitle:[sound objectAtIndex:indexPath.row]
                      forState:UIControlStateNormal];
-    [cell.loopButton setTitle:soundsArray[row] forState:UIControlStateSelected];
     
+    NSLog(@"set play button title to %@",cell.playButton.titleLabel);
     
+    [cell.playButton setTitle:[sound objectAtIndex:indexPath.row] forState:UIControlStateSelected];
+    
+    [cell.loopButton setTitle:[sound objectAtIndex:indexPath.row]
+                     forState:UIControlStateNormal];
+    [cell.loopButton setTitle:[sound objectAtIndex:indexPath.row] forState:UIControlStateSelected];
+
     return cell;
+}
+
+-(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *key = [_keys objectAtIndex:section];
     
+    return key;
 }
 @end

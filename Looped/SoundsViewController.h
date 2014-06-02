@@ -13,4 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *SoundTableView;
 ;
+
+@property (strong, nonatomic) NSDictionary *sounds;
+@property (strong, nonatomic) NSArray *keys;
+
 @end
