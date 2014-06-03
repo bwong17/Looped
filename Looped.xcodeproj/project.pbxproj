@@ -315,6 +315,7 @@
 		E057C8DB193BB88200F5B5FF /* facebook_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = E057C8DA193BB88200F5B5FF /* facebook_blue.png */; };
 		E057C8DD193BD3A100F5B5FF /* facebook_white.png in Resources */ = {isa = PBXBuildFile; fileRef = E057C8DC193BD3A100F5B5FF /* facebook_white.png */; };
 		E057C8DF193BE4E800F5B5FF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E057C8DE193BE4E800F5B5FF /* FacebookSDK.framework */; };
+		E05933ED193D927300AF1128 /* EditBioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05933EC193D927300AF1128 /* EditBioViewController.m */; };
 		E0620504190DF34B00FD633B /* Looped_Base_Color.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620501190DF34B00FD633B /* Looped_Base_Color.png */; };
 		E0620505190DF34B00FD633B /* Looped Login Image.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620502190DF34B00FD633B /* Looped Login Image.png */; };
 		E0620506190DF34B00FD633B /* Looped Text.png in Resources */ = {isa = PBXBuildFile; fileRef = E0620503190DF34B00FD633B /* Looped Text.png */; };
@@ -835,6 +836,8 @@
 		E057C8DA193BB88200F5B5FF /* facebook_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_blue.png; sourceTree = "<group>"; };
 		E057C8DC193BD3A100F5B5FF /* facebook_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_white.png; sourceTree = "<group>"; };
 		E057C8DE193BE4E800F5B5FF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		E05933EB193D927300AF1128 /* EditBioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBioViewController.h; sourceTree = "<group>"; };
+		E05933EC193D927300AF1128 /* EditBioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBioViewController.m; sourceTree = "<group>"; };
 		E0620501190DF34B00FD633B /* Looped_Base_Color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Looped_Base_Color.png; sourceTree = SOURCE_ROOT; };
 		E0620502190DF34B00FD633B /* Looped Login Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Login Image.png"; sourceTree = SOURCE_ROOT; };
 		E0620503190DF34B00FD633B /* Looped Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Looped Text.png"; sourceTree = SOURCE_ROOT; };
@@ -1724,6 +1727,8 @@
 		E0919CF11904BD3100D1D50D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E05933EB193D927300AF1128 /* EditBioViewController.h */,
+				E05933EC193D927300AF1128 /* EditBioViewController.m */,
 				E08F99711925BA140099E93D /* NavigationViewController.h */,
 				E08F99721925BA140099E93D /* NavigationViewController.m */,
 				E0DA87881921BB7A00BB7BFB /* EditProfileViewController.h */,
@@ -2344,6 +2349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0919CF91904F39600D1D50D /* NewAccountViewController.m in Sources */,
+				E05933ED193D927300AF1128 /* EditBioViewController.m in Sources */,
 				E0919A631904B34700D1D50D /* main.m in Sources */,
 				E08F99731925BA140099E93D /* NavigationViewController.m in Sources */,
 				E0DA87871921750200BB7BFB /* ResetViewController.m in Sources */,

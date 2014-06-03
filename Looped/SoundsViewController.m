@@ -102,7 +102,7 @@
     [cell.playButton setTitle:[sound objectAtIndex:indexPath.row]
                      forState:UIControlStateNormal];
     
-    NSLog(@"set play button title to %@",cell.playButton.titleLabel);
+    //NSLog(@"set play button title to %@",cell.playButton.titleLabel);
     
     [cell.playButton setTitle:[sound objectAtIndex:indexPath.row] forState:UIControlStateSelected];
     

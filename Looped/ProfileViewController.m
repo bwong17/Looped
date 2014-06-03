@@ -23,6 +23,7 @@
 @synthesize emailVerified;
 @synthesize bar;
 @synthesize facebookLogo;
+@synthesize bioBox;
 
 -(BOOL) shouldAutorotate { return NO; }
 
@@ -52,13 +53,15 @@
             NSString *day = loggedUser[@"birthDay"];
             NSString *year = loggedUser[@"birthYear"];
             NSString *email = loggedUser[@"email"];
+            NSString *bio = loggedUser[@"Bio"];
             
             self.NameLabel.text = [NSString stringWithFormat:@"%@ %@",firstName,lastName];
             self.birthdayMonth.text = month;
             self.birthdayDay.text = day;
             self.birthdayYear.text = year;
             self.emailField.text = email;
-            
+            self.bioBox.text = bio;
+
             verified = loggedUser[@"emailVerified"];
             
             if(verified.intValue == 1){

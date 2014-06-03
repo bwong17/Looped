@@ -24,7 +24,16 @@
 @synthesize startPoint;
 @synthesize recognizer;
 @synthesize landscapeView;
-@synthesize slider;
+@synthesize sliderRight;
+@synthesize tabBar;
+@synthesize playButton;
+@synthesize addCopyButton;
+
+@synthesize secs_0;
+@synthesize secs_10;
+@synthesize secs_15;
+@synthesize secs_20;
+@synthesize secs_25;
 
 BOOL done = YES;
 UIButton *currentSender;
@@ -35,7 +44,7 @@ int currentCol;
 NSTimeInterval timeInterval;
 
 float currentSliderVal = 1.0;
-float currentSoundWidth = 112.0;
+float maxSoundWidth = 90.0;
 
 // total view
 int maxX = 320;
@@ -43,7 +52,7 @@ int maxY = 568;
 
 //width and height of sound
 int gridWidth = 50;
-int gridHeight = 104;
+int gridHeight = 90;
 
 int ylayers = 20;
 int xlayers = 0;
@@ -72,16 +81,32 @@ int paddingMaxY;
 int lastPositionX;
 int lastPositionY;
 
+int soundCurrentX;
+int soundCurrentY;
+
 Box soundBox[BOXROWS][BOXCOLUMNS];
 
 -(BOOL) shouldAutorotate { return NO; }
+
 
 -(void) viewDidLoad{
     
     [super viewDidLoad];
     CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI_2);
-    self.slider.transform = trans;
-    [self.slider setFrame:CGRectMake(50, 50, 30, 120)];
+    
+    //self.slider.transform = trans;
+    self.secs_0.transform = trans;
+    self.secs_5.transform = trans;
+    self.secs_10.transform = trans;
+    self.secs_15.transform = trans;
+    self.secs_20.transform = trans;
+    self.secs_25.transform = trans;
+    self.playButton.transform = trans;
+    self.addCopyButton.transform = trans;
+    
+    //[self.slider setFrame:CGRectMake(100, 100, 30, 110)];
+    
+    self.tabBar.title = [NSString stringWithFormat:@"Recording %@",soundLooping];
     
     highestXrange = maxX - (gridWidth/2);
     lowestXrange = xlayers + (gridWidth/2);
@@ -105,6 +130,9 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
 
     paddingMinY = lowestYrange - padding;
     paddingMaxY = highestYrange + padding;
+    
+    soundCurrentX = 230;
+    soundCurrentY = 250;
     
     
 }
@@ -221,14 +249,16 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
 }
 */
 
-- (IBAction)sliderValueChanged:(id)sender {
+- (IBAction)sliderRightValueChanged:(id)sender {
     
-    if(slider.value == 1)
-        currentSoundWidth = 112;
+    double currentSoundWidth;
+    
+    if(sliderRight.value == 1)
+        currentSoundWidth = maxSoundWidth;
     else
-        currentSoundWidth = gridWidth * slider.value;
+        currentSoundWidth = gridWidth * sliderRight.value;
     
-    self.BoxToMove.frame = CGRectMake(0.0, 50.0, currentSoundWidth, 50.0);
+    self.BoxToMove.frame = CGRectMake(soundCurrentX, soundCurrentY, gridWidth, currentSoundWidth);
 }
 
 - (IBAction)moveBox1:(UILongPressGestureRecognizer*)sender {
@@ -254,16 +284,24 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
             if(startPoint.y < exactlyYmin){
                 BoxToMove.center = CGPointMake(exactlyX, exactlyYmin);
                 lastPositionY = exactlyYmin;
+                
+                soundCurrentY = exactlyYmin;
             }
             else if(startPoint.y > exactlyYmax){
                 BoxToMove.center = CGPointMake(exactlyX, exactlyYmax);
                 lastPositionY = exactlyYmax;
+                
+                soundCurrentY = exactlyYmax;
             }
             else{
                 BoxToMove.center = CGPointMake(exactlyX, startPoint.y);
                 lastPositionY = startPoint.y;
+                
+                soundCurrentY = startPoint.y;
+                
             }
             lastPositionX = exactlyX;
+            soundCurrentX = exactlyX;
             
         }else{
             
@@ -295,6 +333,8 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
                 pointY = startPoint.y;
             
             BoxToMove.center = CGPointMake(pointX,pointY);
+            soundCurrentX = pointX;
+            soundCurrentY = pointY;
         }
         printf("so place in X: %0.2d    Y: %0.2d\n",pointX, pointY);
         BoxToMove.layer.borderWidth = 0.0f;

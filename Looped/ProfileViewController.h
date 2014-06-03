@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *statusIndicator;
 @property (weak, nonatomic) IBOutlet UINavigationItem *bar;
 @property (weak, nonatomic) IBOutlet UILabel *emailVerified;
+@property (weak, nonatomic) IBOutlet UITextView *bioBox;
 @property (weak, nonatomic) IBOutlet UIImageView *facebookLogo;
 @end
