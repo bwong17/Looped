@@ -16,6 +16,7 @@
 @synthesize lastName;
 @synthesize userName;
 @synthesize password;
+@synthesize loading;
 
 @synthesize genderLabel;
 @synthesize ddMenuGender;
@@ -61,11 +62,14 @@
 
 - (IBAction)createdAccount:(id)sender {
     
-    PFUser *user = [PFUser currentUser];
+    PFUser *user = [PFUser user];
+    
+    self.loading.hidden = NO;
+    [loading startAnimating];
     
     user.username = self.userName.text;
     user.password = self.password.text;
-    
+    NSLog(@"username %@", user.username);
     user[@"firstName"] = self.firstName.text;
     user[@"lastName"] = self.lastName.text;
     user[@"gender"] = self.genderLabel.titleLabel.text;
@@ -84,6 +88,8 @@
         [alert show];
      
         }
+        self.loading.hidden = YES;
+        [loading stopAnimating];
     }];
 }
 
@@ -94,6 +100,7 @@
     [self.lastName setDelegate:self];
     [self.userName setDelegate:self];
     [self.password setDelegate:self];
+    self.loading.hidden = YES;
 }
 
 @end

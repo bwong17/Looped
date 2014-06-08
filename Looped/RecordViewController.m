@@ -18,16 +18,18 @@
 @synthesize timer = mTimer;
 //@synthesize LoopingLabel;
 @synthesize recorder;
-@synthesize audioPlayBackPlayer;
-@synthesize audioPlayer;
+@synthesize audioPlayerClip;
+@synthesize audioPlayerTimeline;
 @synthesize BoxToMove;
 @synthesize startPoint;
 @synthesize recognizer;
 @synthesize landscapeView;
 @synthesize sliderRight;
+@synthesize sliderLeft;
 @synthesize tabBar;
 @synthesize playButton;
 @synthesize addCopyButton;
+@synthesize playClip;
 
 @synthesize secs_0;
 @synthesize secs_10;
@@ -84,6 +86,9 @@ int lastPositionY;
 int soundCurrentX;
 int soundCurrentY;
 
+double currentSoundRightBound;
+double currentSoundLeftBound;
+
 Box soundBox[BOXROWS][BOXCOLUMNS];
 
 -(BOOL) shouldAutorotate { return NO; }
@@ -92,9 +97,9 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
 -(void) viewDidLoad{
     
     [super viewDidLoad];
-    CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI_2);
     
-    //self.slider.transform = trans;
+    CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI_2);
+
     self.secs_0.transform = trans;
     self.secs_5.transform = trans;
     self.secs_10.transform = trans;
@@ -103,8 +108,7 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     self.secs_25.transform = trans;
     self.playButton.transform = trans;
     self.addCopyButton.transform = trans;
-    
-    //[self.slider setFrame:CGRectMake(100, 100, 30, 110)];
+    self.playClip.transform = trans;
     
     self.tabBar.title = [NSString stringWithFormat:@"Recording %@",soundLooping];
     
@@ -134,7 +138,23 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     soundCurrentX = 230;
     soundCurrentY = 250;
     
+    currentSoundLeftBound = soundCurrentY;
+    currentSoundRightBound = soundCurrentY + gridHeight;
     
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:soundLooping ofType:@"mp3"]];
+    
+    NSError *error;
+    
+    audioPlayerClip = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    if (error)
+    {
+        NSLog(@"Error in audioPlayer: %@",
+              [error localizedDescription]);
+    } else {
+        audioPlayerClip.delegate = self;
+        [audioPlayerClip prepareToPlay];
+    }
 }
    //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
     //NSLog(@"%d",[self.loopVC interfaceOrientation]);
@@ -248,17 +268,58 @@ Box soundBox[BOXROWS][BOXCOLUMNS];
     [[sender view] setTransform:zoomTransform];
 }
 */
+- (IBAction)playClip:(id)sender {
+    
+    [audioPlayerClip play];
+    self.playClip.backgroundColor = [UIColor grayColor];
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    if(player == audioPlayerClip)
+        self.playClip.backgroundColor = [UIColor orangeColor];
+}
 
 - (IBAction)sliderRightValueChanged:(id)sender {
     
-    double currentSoundWidth;
+    printf("currentSoundRightBound:%0.2f\n",currentSoundRightBound);
     
-    if(sliderRight.value == 1)
-        currentSoundWidth = maxSoundWidth;
-    else
-        currentSoundWidth = gridWidth * sliderRight.value;
+    if(sliderRight.value == 1){
+        currentSoundRightBound = maxSoundWidth;
+        printf("hit max %0.2f\n",currentSoundRightBound);
+    }
+    else{
+        currentSoundRightBound = gridHeight * sliderRight.value;
+        printf("now %0.2f with slider value \n",currentSoundRightBound);
+    }
     
-    self.BoxToMove.frame = CGRectMake(soundCurrentX, soundCurrentY, gridWidth, currentSoundWidth);
+    self.BoxToMove.frame = CGRectMake(soundCurrentX, soundCurrentY, gridWidth, currentSoundRightBound);
+}
+- (IBAction)sliderLeftValueChanged:(id)sender {
+
+    printf("currentSoundLeftBound:%0.2f\n",currentSoundLeftBound);
+    
+    if(sliderLeft.value == 0.1){
+        printf("hit max %0.2f\n",currentSoundLeftBound);
+        soundCurrentY = 250;
+        currentSoundRightBound = soundCurrentY + gridHeight;
+        
+        self.BoxToMove.frame = CGRectMake(soundCurrentX, soundCurrentY, gridWidth, gridHeight);
+
+    }
+    else{
+        
+        double temp = sliderLeft.value * gridHeight;
+        double tempTopY = soundCurrentY + temp/2;
+        double tempBottomY = (soundCurrentY + gridHeight) - temp/2;
+        
+        printf("now %0.2f -> %0.2f with slider value %0.2f\n",tempTopY, tempBottomY, sliderLeft.value);
+        
+        self.BoxToMove.frame = CGRectMake(soundCurrentX, tempTopY, gridWidth, tempBottomY - tempTopY);
+
+    }
+    
+    
 }
 
 - (IBAction)moveBox1:(UILongPressGestureRecognizer*)sender {

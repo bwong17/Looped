@@ -33,12 +33,14 @@ typedef struct{
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *addCopyButton;
+@property (weak, nonatomic) IBOutlet UIButton *playClip;
 
 @property (strong, nonatomic) UIViewController *loopVC;
-@property (weak, nonatomic) IBOutlet UISlider *sliderRight;
+@property (nonatomic, strong) IBOutlet UISlider *sliderRight;
+@property (weak, nonatomic) IBOutlet UISlider *sliderLeft;
 
-@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
-@property (strong, nonatomic) AVAudioPlayer *audioPlayBackPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayerClip;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayerTimeline;
 @property (strong, nonatomic) AVAudioRecorder *recorder;
 @property (nonatomic, strong) NSTimer* timer;
 

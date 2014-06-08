@@ -315,9 +315,12 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nfV-Xg-Z4v">
-                                <rect key="frame" x="200" y="132" width="110" height="31"/>
+                                <rect key="frame" x="200" y="117" width="110" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.89775988520000005" green="0.83202463319999997" blue="0.23935429320000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.2823529541" green="0.5411764979" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="thumbTintColor" red="1" green="0.047969972450000002" blue="0.041569246519999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="sliderRightValueChanged:" destination="kYx-L4-ddt" eventType="valueChanged" id="1vS-br-w6T"/>
                                 </connections>
@@ -374,10 +377,10 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diH-Sj-NlR">
-                                <rect key="frame" x="20" y="111" width="30" height="150"/>
+                                <rect key="frame" x="5" y="220" width="30" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.42232059280000001" blue="0.37806838040000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Play">
+                                <state key="normal" title="Play Timeline">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -388,7 +391,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAW-Mp-4DS">
-                                <rect key="frame" x="20" y="320" width="30" height="150"/>
+                                <rect key="frame" x="5" y="376" width="30" height="141"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89775988520000005" green="0.83202463319999997" blue="0.23935429320000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Add Copy">
@@ -401,6 +404,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouA-rC-mzn">
+                                <rect key="frame" x="5" y="67" width="30" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Clip">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playClip:" destination="kYx-L4-ddt" eventType="touchUpInside" id="p7b-Xr-z2X"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bgq-lA-VGv">
+                                <rect key="frame" x="200" y="74" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.42232059280000001" blue="0.37806838040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sliderLeftValueChanged:" destination="kYx-L4-ddt" eventType="valueChanged" id="Rc7-0x-7ZW"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -418,6 +446,7 @@
                         <outlet property="addCopyButton" destination="CAW-Mp-4DS" id="z08-JG-z0G"/>
                         <outlet property="landscapeView" destination="Zrm-kf-T0E" id="yWb-ZH-Qhz"/>
                         <outlet property="playButton" destination="diH-Sj-NlR" id="WGk-21-OxW"/>
+                        <outlet property="playClip" destination="ouA-rC-mzn" id="nPD-bJ-10i"/>
                         <outlet property="recognizer" destination="O5T-SN-Td3" id="CID-Jg-g3c"/>
                         <outlet property="secs_0" destination="sov-5I-hhf" id="JUS-Bf-ZYe"/>
                         <outlet property="secs_10" destination="S7V-n4-BiO" id="G2q-SR-Jdc"/>
@@ -425,6 +454,7 @@
                         <outlet property="secs_20" destination="HwD-m9-d4A" id="G76-3q-GwU"/>
                         <outlet property="secs_25" destination="rsZ-RJ-vbs" id="jp1-5h-afY"/>
                         <outlet property="secs_5" destination="dT9-uW-01g" id="8yM-cH-dkw"/>
+                        <outlet property="sliderLeft" destination="bgq-lA-VGv" id="rYc-sG-Dyv"/>
                         <outlet property="sliderRight" destination="nfV-Xg-Z4v" id="GP1-KF-bdE"/>
                         <outlet property="tabBar" destination="2Vx-YE-p5c" id="JA9-3o-RIz"/>
                     </connections>
@@ -481,7 +511,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeC-MY-0rI">
                                 <rect key="frame" x="103" y="97" width="114" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.61917612899999996" blue="0.51790033410000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dju-DQ-cNu">
                                 <rect key="frame" x="9" y="352" width="68" height="25"/>
@@ -1175,6 +1205,11 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="azg-Jk-qDe">
+                                <rect key="frame" x="141" y="295" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" id="Zd2-8U-7FY"/>
@@ -1183,6 +1218,7 @@
                         <outlet property="firstName" destination="b1v-TF-LYd" id="1bH-BG-a5B"/>
                         <outlet property="genderLabel" destination="pkY-OQ-MNi" id="tTh-J1-9AP"/>
                         <outlet property="lastName" destination="wwa-Lg-SW0" id="zvx-E8-IlA"/>
+                        <outlet property="loading" destination="azg-Jk-qDe" id="Mjk-gZ-P6p"/>
                         <outlet property="password" destination="smO-wj-lME" id="lZL-IB-ANq"/>
                         <outlet property="userName" destination="sCC-Fa-q5Y" id="aNf-rX-gg1"/>
                         <segue destination="8YX-ce-x5E" kind="modal" identifier="createAccount" animates="NO" id="SNd-Z5-mVx"/>
@@ -1236,6 +1272,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="SNd-Z5-mVx"/>
-        <segue reference="RX7-AQ-Rod"/>
+        <segue reference="sY3-e0-sZw"/>
     </inferredMetricsTieBreakers>
 </document>

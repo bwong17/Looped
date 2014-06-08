@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *genderLabel;
 @property (weak, nonatomic) IBOutlet UIView *ddMenuGender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 @end
 
